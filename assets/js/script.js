@@ -6,7 +6,7 @@ var choosenWord;
 
 document.addEventListener("DOMContentLoaded", function () {
   let playButton = document.getElementById('play-button');
-  
+/** This event sets the game taking player name and category in order to start*/
   playButton.addEventListener("click", function(){
       player = document.getElementById("player-name").value;
       if(!player){
@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("game-options").style.display = 'none';
       document.getElementById("game").style.display = "flex"; 
       document.getElementById("display-player").textContent = player;
+      let selectCategory = document.getElementById("category-selector");
+      category = selectCategory.options[selectCategory.selectedIndex].value;
+      console.log(category)
 
   })
   
@@ -24,3 +27,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   });
+
