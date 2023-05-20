@@ -1,0 +1,64 @@
+* {
+    margin:0;
+    padding:0; 
+}
+
+body {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    letter-spacing:0.1rem;
+}
+
+#game {
+    display:none;
+ }
+    
+    
+.game-container {
+    width: 60vw;
+  height: 80vh;
+  border:2px solid #000;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  padding-top:5%;
+  position:relative;
+
+}
+
+h1 {
+    letter-spacing:0.5rem;
+}
+
+
+#display-player {
+    position:absolute;
+    right:20px;
+    top:10px
+}
+
+#game-options {
+    margin-top: 60px;
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+    font-size:22px;
+    gap:40px;
+
+}
+
+
+.game-options-name,
+.game-options-category {
+display:flex;
+justify-content:space-between;
+align-items:baseline;
+gap:20px;
+
+}
+.game-options-action {
+    margin:0 auto;
+}
