@@ -22,6 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("category", category);
     choosenWord = getRandomWordBycategory(category);
   });
+
+// Gets the key value when pressed
+  document.addEventListener("keydown", function (event) {
+    let key = event.key;
+    console.log(key);
+  });
+
+
+
 });
 
 
