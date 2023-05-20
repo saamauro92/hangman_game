@@ -1,5 +1,6 @@
 var category = "countries";
 var choosenWord;
+var gameStatus = "off";
 
 document.addEventListener("DOMContentLoaded", function () {
   let playButton = document.getElementById("play-button");
@@ -21,12 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
     //save category in localstorage
     localStorage.setItem("category", category);
     choosenWord = getRandomWordBycategory(category);
+    gameStatus = "on";
   });
 
 // Gets the key value when pressed
   document.addEventListener("keydown", function (event) {
     let key = event.key;
-    console.log(key);
+    checkIfWordMatchesKey(choosenWord, key);
   });
 
 
@@ -78,6 +80,27 @@ function getRandomWordBycategory(category) {
 }
 
 
+
+
+
+
+function checkIfWordMatchesKey(word, key) {
+    if (gameStatus === "off") return;
+console.log(word, ' word');
+    let indexes = [];
+    let wordArray = [];
+  
+      //Get indices of letters matched using the indexexs[]
+      for (let i = 0; i < wordArray.length; i++) {
+        if (wordArray[i] === " ") {
+          continue;
+        } else if (wordArray[i] === key) {
+          indexes.push(i);
+
+        }
+      }
+  
+  }
 
 
 
