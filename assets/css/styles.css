@@ -40,6 +40,17 @@ h1 {
     top:10px
 }
 
+#title {
+    text-transform:uppercase;
+    }
+    
+#title.moved {
+        position:absolute;
+        left:20px;
+        right:0;
+        top:10px; 
+}
+
 #game-options {
     margin-top: 60px;
     display:flex;
