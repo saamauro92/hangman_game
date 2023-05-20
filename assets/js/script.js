@@ -20,12 +20,34 @@ document.addEventListener("DOMContentLoaded", function () {
     category = selectCategory.options[selectCategory.selectedIndex].value;
     //save category in localstorage
     localStorage.setItem("category", category);
+    choosenWord = getRandomWordBycategory(category);
   });
 });
 
 
 
 
+/** This function gets a new or current category and returns a random word */
+function getRandomWordBycategory(category) {
+    let choosenWord;
+     if (category === "animals") {
+       choosenWord =
+         animals[Math.floor(Math.random() * animals.length)].word;
+     
+     } else if (category === "movies") {
+       choosenWord =
+         movies[Math.floor(Math.random() * movies.length)].word;
+
+     } else {
+       choosenWord =
+         countries[
+           Math.floor(Math.random() * countries.length)
+         ].word;
+ 
+     }
+   console.log(choosenWord);
+     return choosenWord;
+   }
 
 
 
