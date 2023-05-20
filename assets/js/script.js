@@ -33,22 +33,40 @@ function getRandomWordBycategory(category) {
      if (category === "animals") {
        choosenWord =
          animals[Math.floor(Math.random() * animals.length)].word;
-     
+         runGame(choosenWord)
      } else if (category === "movies") {
        choosenWord =
          movies[Math.floor(Math.random() * movies.length)].word;
-
+         runGame(choosenWord)
      } else {
        choosenWord =
          countries[
            Math.floor(Math.random() * countries.length)
          ].word;
- 
+         runGame(choosenWord)
      }
    console.log(choosenWord);
      return choosenWord;
    }
 
+
+/** This function gets a random word and display letter spaces in the ui */
+   function runGame(choosenWord) {
+    let lettersContainer = document.getElementById("word-container");
+    lettersContainer.innerHTML = "";
+  
+    let html = `<div class="game-letter"></div>`;
+    let htmlEmpty = `<div class="game-letter-space"></div>`;
+  
+    for (let i = 0; i < choosenWord.length; i++) {
+      if (choosenWord[i] === " ") {
+        lettersContainer.innerHTML += htmlEmpty;
+        continue;
+      } else {
+        lettersContainer.innerHTML += html;
+      }
+    }
+}
 
 
 
