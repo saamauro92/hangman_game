@@ -8,6 +8,41 @@
     <title>Hangman</title>
 </head>
 <body>
+
+   <div class="game-container">
+        <p id="display-player"> </p>
+            <h1 id="title">Hangman</h1>
+
+      <div id="game-options">
+        <div class="game-options-name">
+          <p>Write your name:</p>
+          <input type="text" id="player-name" maxlength="15" />
+       
+        </div>
+      
+        <div class="game-options-category">
+          <p>Select Category:</p>
+          <select id="category-selector">
+            <option value="countries">Countries</option>
+            <option value="animals">Animals</option>
+            <option value="movies">Movies</option>
+          </select>
+        </div>
+        <div class="game-options-action">
+    
+          <button id="play-button">Play Game</button>
+         
+        </div>
+        <p id="display-name-error"></p>
+    </div>
+
+    <div id="game">
+
+    </div>
+
+    </div>
+ 
+
     <script src="assets/js/script.js"> </script>
 </body>
 </html>
