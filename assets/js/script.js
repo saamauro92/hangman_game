@@ -16,9 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("game-options").style.display = 'none';
       document.getElementById("game").style.display = "flex"; 
       document.getElementById("display-player").textContent = player;
+         //save player in localstorage
+    localStorage.setItem("player", player);
       let selectCategory = document.getElementById("category-selector");
       category = selectCategory.options[selectCategory.selectedIndex].value;
-      console.log(category)
+          //save category in localstorage
+    localStorage.setItem("category", category);
+
 
   })
   
