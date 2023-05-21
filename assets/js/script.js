@@ -293,11 +293,11 @@ function hangmanDisplay() {
     document.getElementById("hangman-right-leg").style.display = "block";
   } else if (errorCounter === 10) {
     document.getElementById("hangman-left-leg").style.display = "block";
-
-      alert(`YOU GOT HANGED! the answer was ${choosenWord}`);
+    setTimeout(()=> {
+      alert(`YOU GOT HANGED! the correct answer is ${choosenWord}`);
       choosenWord = getRandomWordBycategory(category);
       restartCounters();
-
+    }, 500)
   }
 }
 
