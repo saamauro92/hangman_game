@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementsByTagName("select")[0].value =
       localStorage.getItem("category");
   }
-  
+
   let playButton = document.getElementById("play-button");
   /** This event sets the game taking player name and category in order to start*/
   playButton.addEventListener("click", function () {
@@ -64,6 +64,16 @@ document.addEventListener("DOMContentLoaded", function () {
     gameStatus = "on";
   });
 });
+
+//GET TITLE 
+let title = document.getElementById("title");
+title.addEventListener("click", goToMainSection);
+
+function goToMainSection(){
+document.getElementById("title").classList.remove("moved");
+document.getElementById("game-options").style.display = "flex";
+document.getElementById("game").style.display = "none";
+}
 
 // Gets the key value when pressed
 document.addEventListener("keydown", function (event) {
