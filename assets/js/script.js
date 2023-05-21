@@ -251,6 +251,7 @@ function incrementScoreCounter() {
     alert("Well Done!");
     scoreCounter += 1;
     document.getElementById("score-counter").innerText = scoreCounter;
+    nextWord();
   }
 
 let countries = [
