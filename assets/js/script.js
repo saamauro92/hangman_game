@@ -188,7 +188,7 @@ function compareArrays(arr1, arr2) {
         return false;
       }
     }
-
+    incrementScoreCounter();
   }
 
 
@@ -217,6 +217,13 @@ function incrementErrorCounter() {
     errorCounter += 1;
     document.getElementById("error-counter").innerText = errorCounter;
 }
+
+/** This function increments scoreCounter by one */
+function incrementScoreCounter() {
+    alert("Well Done!");
+    scoreCounter += 1;
+    document.getElementById("score-counter").innerText = scoreCounter;
+  }
 
 let countries = [
   {
