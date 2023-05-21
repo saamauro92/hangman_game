@@ -155,8 +155,8 @@ function checkIfWordMatchesKey(word, key) {
   ) {
     wrongLetters.push(key);
     printWrongLetter(wrongLetters);
+    incrementErrorCounter();
   }
-
   console.log(wordArray);
   printLetter(indexes, wordArray);
 }
@@ -179,6 +179,12 @@ function printWrongLetter(wrongLetters) {
       divContainer.appendChild(newDiv);
     }
   }
+
+  /** This function increments errorCounter by one */
+function incrementErrorCounter() {
+    errorCounter += 1;
+    document.getElementById("error-counter").innerText = errorCounter;
+}
 
 let countries = [
   {
