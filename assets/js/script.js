@@ -178,7 +178,10 @@ function checkIfWordMatchesKey(word, key) {
   }
   console.log(wordArray);
   printLetter(indexes, wordArray);
-  compareArrays(wordArray, matchingLetters);
+  
+  setTimeout(()=>{
+    compareArrays(wordArray, matchingLetters);
+}, 1000)
 }
 
 //** This function takes two arrays and compare them to see if values are the same in despite their order, will return the score + 1  */
