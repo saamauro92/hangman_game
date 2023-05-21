@@ -105,6 +105,16 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
+  /** This functions restarts the wrongLetters and errorCounter */
+  function restartCounters() {
+    wrongLetters = [];
+    errorCounter = 0;
+    matchingLetters = [];
+    document.getElementById("error-counter").innerText = errorCounter;
+    document.getElementById("diplay-wrong-letters").innerHTML = "";
+    document.getElementById("hint-text").innerText = "";
+  }
+
 /** This function gets a new or current category and returns a random word */
 function getRandomWordBycategory(category) {
   let wordToGuess;
@@ -139,18 +149,6 @@ function runGame(choosenWord) {
     }
   }
 }
-
-  /** This functions restarts the wrongLetters and errorCounter */
-  function restartCounters() {
-    wrongLetters = [];
-    errorCounter = 0;
-    matchingLetters = [];
-    document.getElementById("error-counter").innerText = errorCounter;
-    document.getElementById("diplay-wrong-letters").innerHTML = "";
-    document.getElementById("hint-text").innerText = "";
-  }
-
-
 
 function checkIfWordMatchesKey(word, key) {
   if (gameStatus === "off") return;
