@@ -1,35 +1,38 @@
-var category = "countries";
-var choosenWord;
 let wrongLetters = [];
-var gameStatus = "off";
+let errorCounter = 0;
+let scoreCounter = 0;
+var category;
+var choosenWord;
 var alphabet = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
 ];
+var gameStatus = "off";
+
 document.addEventListener("DOMContentLoaded", function () {
       //gets player name from localStorage
   if (localStorage.getItem("player")) {
