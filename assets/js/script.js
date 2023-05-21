@@ -25,16 +25,17 @@ document.addEventListener("DOMContentLoaded", function () {
     gameStatus = "on";
   });
 
-// Gets the key value when pressed
-  document.addEventListener("keydown", function (event) {
-    let key = event.key;
-    checkIfWordMatchesKey(choosenWord, key);
-  });
-
-
 
 });
 
+// Gets the key value when pressed
+document.addEventListener("keydown", function (event) {
+    if(gameStatus === "on"){
+        let key = event.key;
+        checkIfWordMatchesKey(choosenWord, key);
+        console.log(key);
+    }
+  });
 
 
 
