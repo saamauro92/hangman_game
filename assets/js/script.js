@@ -5,38 +5,38 @@ let scoreCounter = 0;
 var category;
 var choosenWord;
 var alphabet = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
 ];
 let player;
 var gameStatus = "off";
 
 document.addEventListener("DOMContentLoaded", function () {
-      //gets player name from localStorage
+  //gets player name from localStorage
   if (localStorage.getItem("player")) {
     document.getElementById("player-name").value =
       localStorage.getItem("player");
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return (document.getElementById("display-name-error").innerHTML =
         "**Please complete your name");
     }
-    restartCounters()
+    restartCounters();
     document.getElementById("title").classList.add("moved");
     document.getElementById("game-options").style.display = "none";
     document.getElementById("display-player").style.display = "block";
@@ -72,15 +72,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//GET TITLE 
+//GET TITLE
 let title = document.getElementById("title");
 title.addEventListener("click", goToMainSection);
 
-function goToMainSection(){
-document.getElementById("title").classList.remove("moved");
-document.getElementById("display-player").style.display = "none";
-document.getElementById("game-options").style.display = "flex";
-document.getElementById("game").style.display = "none";
+function goToMainSection() {
+  document.getElementById("title").classList.remove("moved");
+  document.getElementById("display-player").style.display = "none";
+  document.getElementById("game-options").style.display = "flex";
+  document.getElementById("game").style.display = "none";
 }
 
 //GET HINT BUTTON
@@ -102,12 +102,11 @@ nextWordButton.addEventListener("click", nextWord);
 
 // This function calls for a new word to be randomized
 function nextWord() {
-    restartCounters();
-    category = localStorage.getItem("category");
-    document.getElementById("hint-text").innerText = "";
-    choosenWord = getRandomWordBycategory(category);
-  }
-
+  restartCounters();
+  category = localStorage.getItem("category");
+  document.getElementById("hint-text").innerText = "";
+  choosenWord = getRandomWordBycategory(category);
+}
 
 // Gets the key value when pressed
 document.addEventListener("keydown", function (event) {
@@ -118,27 +117,33 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-  /** This functions restarts the wrongLetters and errorCounter */
-  function restartCounters() {
-    wrongLetters = [];
-    errorCounter = 0;
-    matchingLetters = [];
-    document.getElementById("error-counter").innerText = errorCounter;
-    document.getElementById("diplay-wrong-letters").innerHTML = "";
-    document.getElementById("hint-text").innerText = "";
-  }
+/** This functions restarts the wrongLetters and errorCounter */
+function restartCounters() {
+  wrongLetters = [];
+  errorCounter = 0;
+  matchingLetters = [];
+  document.getElementById("error-counter").innerText = errorCounter;
+  document.getElementById("diplay-wrong-letters").innerHTML = "";
+  document.getElementById("hint-text").innerText = "";
+  hangmanDisplay();
+}
 
 /** This function gets a new or current category and returns a random word */
 function getRandomWordBycategory(category) {
   let wordToGuess;
   if (category === "animals") {
-    wordToGuess = animals[Math.floor(Math.random() * animals.length)].word.toLowerCase();
+    wordToGuess =
+      animals[Math.floor(Math.random() * animals.length)].word.toLowerCase();
     runGame(wordToGuess);
   } else if (category === "movies") {
-    wordToGuess = movies[Math.floor(Math.random() * movies.length)].word.toLowerCase();
+    wordToGuess =
+      movies[Math.floor(Math.random() * movies.length)].word.toLowerCase();
     runGame(wordToGuess);
   } else {
-    wordToGuess = countries[Math.floor(Math.random() * countries.length)].word.toLowerCase();
+    wordToGuess =
+      countries[
+        Math.floor(Math.random() * countries.length)
+      ].word.toLowerCase();
     runGame(wordToGuess);
   }
   console.log(choosenWord);
@@ -203,23 +208,21 @@ function checkIfWordMatchesKey(word, key) {
   console.log(wordArray);
   printLetter(indexes, wordArray);
 
-   //compare if the choosenword matches all the letters in order to score
-  setTimeout(()=>{
+  //compare if the choosenword matches all the letters in order to score
+  setTimeout(() => {
     compareArrays(wordArray, matchingLetters);
-}, 1000)
+  }, 1000);
 }
 
 //** This function takes two arrays and compare them to see if values are the same in despite their order, will return the score + 1  */
 function compareArrays(arr1, arr2) {
-    for (let letter of arr1) {
-      if (!arr2.includes(letter)) {
-        return false;
-      }
+  for (let letter of arr1) {
+    if (!arr2.includes(letter)) {
+      return false;
     }
-    incrementScoreCounter();
   }
-
-
+  incrementScoreCounter();
+}
 
 /** This function takes indexes of correct letters and the word as an array to display them in the interface*/
 function printLetter(indexes, word) {
@@ -231,28 +234,72 @@ function printLetter(indexes, word) {
 
 /** This function takes the wrongLetters array to display them in the interface*/
 function printWrongLetter(wrongLetters) {
-    let divContainer = document.getElementById("diplay-wrong-letters");
-    let newDiv = document.createElement("div");
-  
-    for (let letter of wrongLetters) {
-      newDiv.innerHTML = `${letter}`;
-      divContainer.appendChild(newDiv);
-    }
-  }
+  let divContainer = document.getElementById("diplay-wrong-letters");
+  let newDiv = document.createElement("div");
 
-  /** This function increments errorCounter by one */
+  for (let letter of wrongLetters) {
+    newDiv.innerHTML = `${letter}`;
+    divContainer.appendChild(newDiv);
+  }
+}
+
+/** This function increments errorCounter by one */
 function incrementErrorCounter() {
-    errorCounter += 1;
-    document.getElementById("error-counter").innerText = errorCounter;
+  errorCounter += 1;
+  document.getElementById("error-counter").innerText = errorCounter;
+  hangmanDisplay();
 }
 
 /** This function increments scoreCounter by one */
 function incrementScoreCounter() {
-    alert("Well Done!");
-    scoreCounter += 1;
-    document.getElementById("score-counter").innerText = scoreCounter;
-    nextWord();
+  alert("Well Done!");
+  scoreCounter += 1;
+  document.getElementById("score-counter").innerText = scoreCounter;
+  nextWord();
+}
+
+/**This function gets the hangman svg and return it on parts according to the errorCounters */
+function hangmanDisplay() {
+  if (errorCounter === 0) {
+    let hangmanSvg = document.getElementById("hangman");
+    const eachElement = hangmanSvg.getElementsByTagName("*");
+    for (let i = 0; i < eachElement.length; i++) {
+      eachElement[i].style.display = "none";
+    }
+  } else if (errorCounter === 1) {
+    document.getElementById("hangman-base").style.display = "block";
+  } else if (errorCounter === 2) {
+    document.getElementById("hangman-stand").style.display = "block";
+  } else if (errorCounter === 3) {
+    let topStand = document.getElementsByClassName("hangman-top-stand");
+
+    for (let i = 0; i < topStand.length; i++) {
+      topStand[i].style.display = "block";
+    }
+  } else if (errorCounter === 4) {
+    document.getElementById("hangman-rope").style.display = "block";
+  } else if (errorCounter === 5) {
+    let head = document.getElementsByClassName("hangman-head");
+    for (let i = 0; i < head.length; i++) {
+      head[i].style.display = "block";
+    }
+  } else if (errorCounter === 6) {
+    document.getElementById("hangman-body").style.display = "block";
+  } else if (errorCounter === 7) {
+    document.getElementById("hangman-right-arm").style.display = "block";
+  } else if (errorCounter === 8) {
+    document.getElementById("hangman-left-arm").style.display = "block";
+  } else if (errorCounter === 9) {
+    document.getElementById("hangman-right-leg").style.display = "block";
+  } else if (errorCounter === 10) {
+    document.getElementById("hangman-left-leg").style.display = "block";
+
+      alert(`YOU GOT HANGED! the answer was ${choosenWord}`);
+      choosenWord = getRandomWordBycategory(category);
+      restartCounters();
+
   }
+}
 
 let countries = [
   {
