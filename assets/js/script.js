@@ -108,13 +108,13 @@ document.addEventListener("keydown", function (event) {
 function getRandomWordBycategory(category) {
   let wordToGuess;
   if (category === "animals") {
-    wordToGuess = animals[Math.floor(Math.random() * animals.length)].word;
+    wordToGuess = animals[Math.floor(Math.random() * animals.length)].word.toLowerCase();
     runGame(wordToGuess);
   } else if (category === "movies") {
-    wordToGuess = movies[Math.floor(Math.random() * movies.length)].word;
+    wordToGuess = movies[Math.floor(Math.random() * movies.length)].word.toLowerCase();
     runGame(wordToGuess);
   } else {
-    wordToGuess = countries[Math.floor(Math.random() * countries.length)].word;
+    wordToGuess = countries[Math.floor(Math.random() * countries.length)].word.toLowerCase();
     runGame(wordToGuess);
   }
   console.log(choosenWord);
