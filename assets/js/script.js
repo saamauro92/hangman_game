@@ -96,6 +96,16 @@ function displayHint() {
   document.getElementById("hint-text").innerText = hint;
 }
 
+//GET NEXT BUTTON
+let nextWordButton = document.getElementById("next-button");
+nextWordButton.addEventListener("click", nextWord);
+
+// This function calls for a new word to be randomized
+function nextWord() {
+console.log("next...")
+  }
+
+
 // Gets the key value when pressed
 document.addEventListener("keydown", function (event) {
   if (gameStatus === "on") {
