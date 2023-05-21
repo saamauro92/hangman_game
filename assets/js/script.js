@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     document.getElementById("title").classList.add("moved");
     document.getElementById("game-options").style.display = "none";
+    document.getElementById("display-player").style.display = "block";
     document.getElementById("game").style.display = "flex";
     document.getElementById("display-player").textContent = player;
     //save player in localstorage
@@ -76,6 +77,7 @@ title.addEventListener("click", goToMainSection);
 
 function goToMainSection(){
 document.getElementById("title").classList.remove("moved");
+document.getElementById("display-player").style.display = "none";
 document.getElementById("game-options").style.display = "flex";
 document.getElementById("game").style.display = "none";
 }
