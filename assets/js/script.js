@@ -179,6 +179,7 @@ function checkIfWordMatchesKey(word, key) {
   console.log(wordArray);
   printLetter(indexes, wordArray);
   
+   //compare if the choosenword matches all the letters in order to score
   setTimeout(()=>{
     compareArrays(wordArray, matchingLetters);
 }, 1000)
