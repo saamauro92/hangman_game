@@ -32,6 +32,7 @@ var alphabet = [
     "y",
     "z",
 ];
+let player;
 var gameStatus = "off";
 
 document.addEventListener("DOMContentLoaded", function () {
