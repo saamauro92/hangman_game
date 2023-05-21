@@ -130,7 +130,7 @@ function checkIfWordMatchesKey(word, key) {
     alphabet.includes(key)
   ) {
     wrongLetters.push(key);
-    console.log(wrongLetters);
+    printWrongLetter(wrongLetters);
   }
 
   console.log(wordArray);
@@ -144,6 +144,17 @@ function printLetter(indexes, word) {
     letters[index].textContent = word[index];
   }
 }
+
+/** This function takes the wrongLetters array to display them in the interface*/
+function printWrongLetter(wrongLetters) {
+    let divContainer = document.getElementById("diplay-wrong-letters");
+    let newDiv = document.createElement("div");
+  
+    for (let letter of wrongLetters) {
+      newDiv.innerHTML = `${letter}`;
+      divContainer.appendChild(newDiv);
+    }
+  }
 
 let countries = [
   {
