@@ -104,6 +104,7 @@ nextWordButton.addEventListener("click", nextWord);
 function nextWord() {
     restartCounters();
     category = localStorage.getItem("category");
+    document.getElementById("hint-text").innerText = "";
     choosenWord = getRandomWordBycategory(category);
   }
 
