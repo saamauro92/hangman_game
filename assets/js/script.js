@@ -86,9 +86,18 @@ function getRandomWordBycategory(category) {
 
 function checkIfWordMatchesKey(word, key) {
     if (gameStatus === "off") return;
-console.log(word, ' word');
     let indexes = [];
     let wordArray = [];
+
+    //Makes an array of the choosenWord in order to match the indexes in case there is a space on the word using the wordarray[]
+    if (word !== null) {
+        for (let letter of word) {
+          if (letter === " ") {
+            continue;
+          } else {
+            wordArray.push(letter);
+          }
+        }
   
       //Get indices of letters matched using the indexexs[]
       for (let i = 0; i < wordArray.length; i++) {
@@ -101,6 +110,9 @@ console.log(word, ' word');
       }
   
   }
+
+  console.log(wordArray)
+}
 
 
 
