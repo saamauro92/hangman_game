@@ -59,6 +59,7 @@ body {
 
 h1 {
   letter-spacing: 0.5rem;
+  cursor:pointer;
 }
 
 #display-player {
