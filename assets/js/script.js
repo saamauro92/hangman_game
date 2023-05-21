@@ -78,6 +78,19 @@ document.getElementById("game-options").style.display = "flex";
 document.getElementById("game").style.display = "none";
 }
 
+//GET HINT BUTTON
+let hintButton = document.getElementById("hint-button");
+hintButton.addEventListener("click", displayHint);
+
+/** This function  displays the hint according the choosenWord */
+function displayHint() {
+  let words = [...countries, ...animals, ...movies];
+  let hint = words.find(
+    (word) => word.word.toLocaleLowerCase() === choosenWord.toLowerCase()
+  ).hint;
+  document.getElementById("hint-text").innerText = hint;
+}
+
 // Gets the key value when pressed
 document.addEventListener("keydown", function (event) {
   if (gameStatus === "on") {
