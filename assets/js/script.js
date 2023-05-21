@@ -139,13 +139,8 @@ function runGame(choosenWord) {
   }
 }
 
-function checkIfWordMatchesKey(word, key) {
-  if (gameStatus === "off") return;
-  let indexes = [];
-  let wordArray = [];
-
   /** This functions restarts the wrongLetters and errorCounter */
-function restartCounters() {
+  function restartCounters() {
     wrongLetters = [];
     errorCounter = 0;
     matchingLetters = [];
@@ -153,6 +148,13 @@ function restartCounters() {
     document.getElementById("diplay-wrong-letters").innerHTML = "";
     document.getElementById("hint-text").innerText = "";
   }
+
+
+
+function checkIfWordMatchesKey(word, key) {
+  if (gameStatus === "off") return;
+  let indexes = [];
+  let wordArray = [];
 
   //Makes an array of the choosenWord in order to match the indexes in case there is a space on the word using the wordarray[]
   if (word !== null) {
