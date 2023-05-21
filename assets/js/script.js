@@ -144,6 +144,16 @@ function checkIfWordMatchesKey(word, key) {
   let indexes = [];
   let wordArray = [];
 
+  /** This functions restarts the wrongLetters and errorCounter */
+function restartCounters() {
+    wrongLetters = [];
+    errorCounter = 0;
+    matchingLetters = [];
+    document.getElementById("error-counter").innerText = errorCounter;
+    document.getElementById("diplay-wrong-letters").innerHTML = "";
+    document.getElementById("hint-text").innerText = "";
+  }
+
   //Makes an array of the choosenWord in order to match the indexes in case there is a space on the word using the wordarray[]
   if (word !== null) {
     for (let letter of word) {
@@ -178,7 +188,7 @@ function checkIfWordMatchesKey(word, key) {
   }
   console.log(wordArray);
   printLetter(indexes, wordArray);
-  
+
    //compare if the choosenword matches all the letters in order to score
   setTimeout(()=>{
     compareArrays(wordArray, matchingLetters);
