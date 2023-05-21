@@ -106,19 +106,19 @@ document.addEventListener("keydown", function (event) {
 
 /** This function gets a new or current category and returns a random word */
 function getRandomWordBycategory(category) {
-  let choosenWord;
+  let wordToGuess;
   if (category === "animals") {
-    choosenWord = animals[Math.floor(Math.random() * animals.length)].word;
-    runGame(choosenWord);
+    wordToGuess = animals[Math.floor(Math.random() * animals.length)].word;
+    runGame(wordToGuess);
   } else if (category === "movies") {
-    choosenWord = movies[Math.floor(Math.random() * movies.length)].word;
-    runGame(choosenWord);
+    wordToGuess = movies[Math.floor(Math.random() * movies.length)].word;
+    runGame(wordToGuess);
   } else {
-    choosenWord = countries[Math.floor(Math.random() * countries.length)].word;
-    runGame(choosenWord);
+    wordToGuess = countries[Math.floor(Math.random() * countries.length)].word;
+    runGame(wordToGuess);
   }
   console.log(choosenWord);
-  return choosenWord;
+  return wordToGuess;
 }
 
 /** This function gets a random word and display letter spaces in the ui */
