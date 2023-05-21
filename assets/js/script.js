@@ -111,9 +111,18 @@ function checkIfWordMatchesKey(word, key) {
   
   }
 
-  console.log(wordArray)
+  console.log(wordArray);
+  printLetter(indexes, wordArray);
 }
 
+
+/** This function takes indexes of correct letters and the word as an array to display them in the interface*/
+function printLetter(indexes, word) {
+    let letters = document.getElementsByClassName("game-letter");
+    for (let index of indexes) {
+      letters[index].textContent = word[index];
+    }
+  }
 
 
 
