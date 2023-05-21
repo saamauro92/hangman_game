@@ -31,6 +31,17 @@ var alphabet = [
   "z",
 ];
 document.addEventListener("DOMContentLoaded", function () {
+      //gets player name from localStorage
+  if (localStorage.getItem("player")) {
+    document.getElementById("player-name").value =
+      localStorage.getItem("player");
+  }
+  //gets category name from localStorage
+  if (localStorage.getItem("category")) {
+    document.getElementsByTagName("select")[0].value =
+      localStorage.getItem("category");
+  }
+  
   let playButton = document.getElementById("play-button");
   /** This event sets the game taking player name and category in order to start*/
   playButton.addEventListener("click", function () {
