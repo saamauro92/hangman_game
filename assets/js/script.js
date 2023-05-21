@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return (document.getElementById("display-name-error").innerHTML =
         "**Please complete your name");
     }
+    restartCounters()
     document.getElementById("title").classList.add("moved");
     document.getElementById("game-options").style.display = "none";
     document.getElementById("display-player").style.display = "block";
