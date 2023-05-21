@@ -1,4 +1,5 @@
 let wrongLetters = [];
+let matchingLetters = [];
 let errorCounter = 0;
 let scoreCounter = 0;
 var category;
@@ -156,6 +157,8 @@ function checkIfWordMatchesKey(word, key) {
         continue;
       } else if (wordArray[i] === key) {
         indexes.push(i);
+        matchingLetters.push(key);
+        console.log(matchingLetters, "matching");
       }
     }
   }
@@ -172,7 +175,11 @@ function checkIfWordMatchesKey(word, key) {
   }
   console.log(wordArray);
   printLetter(indexes, wordArray);
+
 }
+
+
+
 
 /** This function takes indexes of correct letters and the word as an array to display them in the interface*/
 function printLetter(indexes, word) {
