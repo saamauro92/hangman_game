@@ -102,7 +102,9 @@ nextWordButton.addEventListener("click", nextWord);
 
 // This function calls for a new word to be randomized
 function nextWord() {
-console.log("next...")
+    restartCounters();
+    category = localStorage.getItem("category");
+    choosenWord = getRandomWordBycategory(category);
   }
 
 
