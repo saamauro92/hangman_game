@@ -40,9 +40,122 @@
 
         <div class="game-display-container">
 
-            <div>Hangman Draw</div>
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            id="hangman"
+            viewBox="0 0 300 300"
+            shape-rendering="geometricPrecision"
+            text-rendering="geometricPrecision"
+          >
+            <path
+              id="hangman-base"
+              d="M47.151577,217.293998l157.477111.610376"
+              transform="translate(.000001 0)"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
+            <path
+              id="hangman-stand"
+              d="M125.890134,26.246185v191.047813"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
+            <path
+              class="hangman-top-stand"
+              d="M125.890134,26.246185h54.933874"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
+            <path
+              id="hangman-rope"
+              d="M180.824008,26.246185v14.038657"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
 
-  
+            <path
+              class="hangman-top-stand"
+              d="M125.890134,48.83011l18.953828-22.583925"
+              transform="translate(0 0.000001)"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
+
+            <path
+              class="hangman-head"
+              d="M175.941,39.67447c-19.37514,3.87503-11.15538,25.59163,6.71414,23.80468c14.1827-1.41827,17.39847-24.41506-4.88301-24.41506"
+              transform="translate(1.532283 1.220752)"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
+            <path
+              id="hangman-body"
+              d="M179.304413,64.799644c0,19.08931-.876593,40.547606,1.519597,59.717146"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
+
+            <path
+              class="hangman-head"
+              d="M173.49949,59.20651c4.10626-.68438,7.4909-.68438,11.59715,0"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
+            <path
+              class="hangman-head"
+              d="M173.49949,48.83011c0,1.01729,0,2.03459,0,3.05188"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
+            <path
+              class="hangman-head"
+              d="M183.50432,49.20723c0,1.38252,0,2.76504,0,4.14755"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
+
+            <path
+              id="hangman-left-arm"
+              d="M179.304413,64.799644c-12.66515,7.5991-15.039523,17.557106-20.222933,30.515646"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
+            <path
+              id="hangman-right-arm"
+              d="M178.94364,65.29109c6.6491,9.97365,17.36563,14.2091,18.93834,26.79083"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
+            <path
+              id="hangman-left-leg"
+              d="M179.40555,124.87759c-5.95997,7.44996-8.71307,25.55192-16.16688,30.0242"
+              transform="translate(1.418458-.3608)"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
+            <path
+              id="hangman-right-leg"
+              d="M179.40555,124.41568c0,13.7554,4.93686,28.74852,11.54777,40.64815"
+              transform="translate(1.41846-2.645588)"
+              fill="none"
+              stroke="#000"
+              stroke-width="0.6"
+            />
+          </svg>
 
           <div class="game-data">
             <div class="words-container" id="word-container"></div>
