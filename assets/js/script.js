@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //get random word by category
     choosenWord = getRandomWordBycategory(category);
+    //set game to status on 
     gameStatus = "on";
   });
 });
