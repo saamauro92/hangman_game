@@ -87,6 +87,26 @@ body {
   flex-grow: 1;
 }
 
+/* SCORES DISPLAY */
+
+#display-errors {
+  position: absolute;
+  right: 20px;
+  bottom: 5%;
+}
+#display-score {
+  position: absolute;
+  left: 20px;
+  bottom: 5%;
+}
+#display-errors,
+#display-score {
+  display: flex;
+  gap: 20px;
+  top: 12%;
+  margin-top:10px;  
+}
+
 /* H1 */
 
 h1 {
