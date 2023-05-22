@@ -38,6 +38,8 @@ let player;  // to store players name
 var gameStatus = "off"; // to set game status
 
 document.addEventListener("DOMContentLoaded", function () {
+  //fetch countries, animales and movies data from assets/data/data.json
+  fetchGameData()
   //gets player name from localStorage
   if (localStorage.getItem("player")) {
     document.getElementById("player-name").value =
@@ -360,3 +362,13 @@ function animationByClass(className) {
 let countries;
 let animals;
 let movies;
+
+/**This function fetchs data from the data.json and returns the categories variables with data */
+async function fetchGameData() {
+  const gameDataFetched = await fetch('assets/data/data.json');
+  let data = await gameDataFetched.json();
+ countries = data.countries;
+ animals = data.animals;
+ movies = data.movies;
+
+}
