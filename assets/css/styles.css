@@ -81,6 +81,11 @@ body {
   font-size: 22px;
   gap: 10px;
 }
+.game-actions {
+  display: flex;
+  gap: 20px;
+  flex-grow: 1;
+}
 
 /* H1 */
 
