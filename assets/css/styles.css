@@ -39,6 +39,10 @@ body {
 /* GAME SECTION */
 #game {
   display: none;
+  width: 90%;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .game-display-container {
@@ -163,6 +167,7 @@ select {
   flex-grow: 1;
 }
 
+
 /* BUTTONS */
 button {
   background: transparent;
@@ -182,3 +187,4 @@ button:focus {
   border: 4px solid #000;
   outline:none;
 }
+
