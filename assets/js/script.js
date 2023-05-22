@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementsByTagName("select")[0].value =
       localStorage.getItem("category");
   }
-
+  //Get play button
   let playButton = document.getElementById("play-button");
   /** This event sets the game taking player name and category in order to start*/
   playButton.addEventListener("click", function () {
@@ -72,10 +72,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//GET TITLE
+//get title
 let title = document.getElementById("title");
 title.addEventListener("click", goToMainSection);
 
+/**This function changes the game section to the first view */
 function goToMainSection() {
   document.getElementById("title").classList.remove("moved");
   document.getElementById("display-player").style.display = "none";
@@ -83,7 +84,7 @@ function goToMainSection() {
   document.getElementById("game").style.display = "none";
 }
 
-//GET HINT BUTTON
+//get hint button
 let hintButton = document.getElementById("hint-button");
 hintButton.addEventListener("click", displayHint);
 
@@ -96,7 +97,7 @@ function displayHint() {
   document.getElementById("hint-text").innerText = hint;
 }
 
-//GET NEXT BUTTON
+//get next button
 let nextWordButton = document.getElementById("next-button");
 nextWordButton.addEventListener("click", nextWord);
 
@@ -167,7 +168,7 @@ function runGame(choosenWord) {
     }
   }
 }
-
+/**This function  creates an array of the choosenWord, gets indices that matches the word , and also check for the wrong letters*/
 function checkIfWordMatchesKey(word, key) {
   if (gameStatus === "off") return;
   let indexes = [];
@@ -286,55 +287,55 @@ function hangmanDisplay() {
     animationById("hangman-right-leg");
   } else if (errorCounter === 10) {
     animationById("hangman-left-leg");
-    setTimeout(()=> {
+    setTimeout(() => {
       alert(`YOU GOT HANGED! the correct answer is ${choosenWord}`);
       choosenWord = getRandomWordBycategory(category);
       restartCounters();
-    }, 500)
+    }, 500);
   }
 }
 
 /**This function takes an id and creates a svg animation based on https://jakearchibald.com/2013/animated-line-drawing-svg/ */
 function animationById(id) {
-    let = path = document.getElementById(id);
-    path.style.display = "block";
-    var length = path.getTotalLength();
-    // Clear any previous transition
-    path.style.transition = path.style.WebkitTransition = "none";
-    // Set up the starting positions
-    path.style.strokeDasharray = length + " " + length;
-    path.style.strokeDashoffset = length;
-    // Trigger a layout so styles are calculated & the browser
-    // picks up the starting position before animating
-    path.getBoundingClientRect();
-    // Define our transition
-    path.style.transition = path.style.WebkitTransition =
-      "stroke-dashoffset 0.5s ease-in-out";
-    // Go!
-    path.style.strokeDashoffset = "0";
-  }
+  let = path = document.getElementById(id);
+  path.style.display = "block";
+  var length = path.getTotalLength();
+  // Clear any previous transition
+  path.style.transition = path.style.WebkitTransition = "none";
+  // Set up the starting positions
+  path.style.strokeDasharray = length + " " + length;
+  path.style.strokeDashoffset = length;
+  // Trigger a layout so styles are calculated & the browser
+  // picks up the starting position before animating
+  path.getBoundingClientRect();
+  // Define our transition
+  path.style.transition = path.style.WebkitTransition =
+    "stroke-dashoffset 0.5s ease-in-out";
+  // Go!
+  path.style.strokeDashoffset = "0";
+}
 
 /**This function takes a class and creates a svg animation based on https://jakearchibald.com/2013/animated-line-drawing-svg/ */
-  function animationByClass(className) {
-    let path = document.getElementsByClassName(className);
-    for (let i = 0; i < path.length; i++) {
-      path[i].style.display = "block";
-      let length = path[i].getTotalLength();
-      // Clear any previous transition
-      path[i].style.transition = path[i].style.WebkitTransition = "none";
-      // Set up the starting positions
-      path[i].style.strokeDasharray = length + " " + length;
-      path[i].style.strokeDashoffset = length;
-      // Trigger a layout so styles are calculated & the browser
-      // picks up the starting position before animating
-      path[i].getBoundingClientRect();
-      // Define our transition
-      path[i].style.transition = path[i].style.WebkitTransition =
-        "stroke-dashoffset 0.5s ease-in-out";
-      // Go!
-      path[i].style.strokeDashoffset = "0";
-    }
+function animationByClass(className) {
+  let path = document.getElementsByClassName(className);
+  for (let i = 0; i < path.length; i++) {
+    path[i].style.display = "block";
+    let length = path[i].getTotalLength();
+    // Clear any previous transition
+    path[i].style.transition = path[i].style.WebkitTransition = "none";
+    // Set up the starting positions
+    path[i].style.strokeDasharray = length + " " + length;
+    path[i].style.strokeDashoffset = length;
+    // Trigger a layout so styles are calculated & the browser
+    // picks up the starting position before animating
+    path[i].getBoundingClientRect();
+    // Define our transition
+    path[i].style.transition = path[i].style.WebkitTransition =
+      "stroke-dashoffset 0.5s ease-in-out";
+    // Go!
+    path[i].style.strokeDashoffset = "0";
   }
+}
 
 let countries = [
   {
