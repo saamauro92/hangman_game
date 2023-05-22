@@ -35,8 +35,8 @@ body {
   flex-direction: column;
   padding: 2%;
 }
-/* GAME SECTION */
 
+/* GAME SECTION */
 #game {
   display: none;
 }
@@ -46,7 +46,7 @@ body {
   display: flex;
   align-items: center;
 }
-
+/* HANGMAN SVG */
 #hangman {
     max-width: 500px;
     margin-top: 100px;
@@ -80,18 +80,11 @@ body {
 }
 
 
-
+/* H1 */
 h1 {
   letter-spacing: 0.5rem;
   cursor:pointer;
 }
-
-#display-player {
-  position: absolute;
-  right: 20px;
-  top: 10px;
-}
-
 #title {
   text-transform: uppercase;
 }
@@ -103,6 +96,16 @@ h1 {
   top: 10px;
 }
 
+#display-player {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+
+
+
+/* GAME OPTIONS */
 #game-options {
   margin-top: 60px;
   display: flex;
@@ -123,7 +126,7 @@ h1 {
   margin: 0 auto;
 }
 
-/* Game letters */
+/* GAME LETTERS */
 
 .words-container {
   display: flex;
@@ -151,9 +154,7 @@ h1 {
   text-transform: uppercase;
 }
 
-
-
-
+/* INPUT & SELECT */
 input[type="text"],
 select {
   border: none;
@@ -165,6 +166,7 @@ select {
   flex-grow: 1;
 }
 
+/* BUTTONS */
 button {
   background: transparent;
   padding: 10px;
