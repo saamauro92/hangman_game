@@ -1,11 +1,11 @@
-let wrongLetters = [];
-let matchingLetters = [];
-let indexes = [];
-let wordArray = [];
-let errorCounter = 0;
-let scoreCounter = 0;
-var category;
-var choosenWord;
+let wrongLetters = []; // to store wrong letter 
+let matchingLetters = []; // to store matching letters 
+let indexes = [];// to store indexes of matching letters
+let wordArray = []; // to create an array of choosenWord
+let errorCounter = 0; // to display error
+let scoreCounter = 0; // to display score
+var category; // to store game category
+var choosenWord; // to store the word to guess
 var alphabet = [
   "a",
   "b",
@@ -33,9 +33,9 @@ var alphabet = [
   "x",
   "y",
   "z",
-];
-let player;
-var gameStatus = "off";
+]; // to make sure we are using only the alphabet keys from keyboard
+let player;  // to store players name
+var gameStatus = "off"; // to set game status
 
 document.addEventListener("DOMContentLoaded", function () {
   //gets player name from localStorage
@@ -50,26 +50,33 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   //Get play button
   let playButton = document.getElementById("play-button");
-  
+
   /** This event sets the game taking player name and category in order to start*/
   playButton.addEventListener("click", function () {
-    player = document.getElementById("player-name").value;
+
+    player = document.getElementById("player-name").value;//get players name
+    //if no player name, display error and stop 
     if (!player) {
       return (document.getElementById("display-name-error").innerHTML =
         "**Please complete your name");
     }
+    //restarts all the counters, words and hangman displayed
     restartCounters();
-    document.getElementById("title").classList.add("moved");
-    document.getElementById("game-options").style.display = "none";
-    document.getElementById("display-player").style.display = "block";
-    document.getElementById("game").style.display = "flex";
-    document.getElementById("display-player").textContent = player;
-    //save player in localstorage
+
+    //change first view to the game view
+    document.getElementById("title").classList.add("moved"); // add moved class to title
+    document.getElementById("game-options").style.display = "none"; // set main section to display none
+    document.getElementById("display-player").style.display = "block"; //set players display block
+    document.getElementById("game").style.display = "flex"; // set game visible 
+    document.getElementById("display-player").textContent = player; // set players name 
+
+    //save player and category in localStorage
     localStorage.setItem("player", player);
     let selectCategory = document.getElementById("category-selector");
     category = selectCategory.options[selectCategory.selectedIndex].value;
-    //save category in localstorage
     localStorage.setItem("category", category);
+
+    //get random word by category
     choosenWord = getRandomWordBycategory(category);
     gameStatus = "on";
   });
@@ -150,7 +157,6 @@ function getRandomWordBycategory(category) {
       ].word.toLowerCase();
     runGame(wordToGuess);
   }
-  console.log(choosenWord);
   return wordToGuess;
 }
 
@@ -279,7 +285,7 @@ function hangmanDisplay() {
     const eachElement = hangmanSvg.getElementsByTagName("*");
     for (let i = 0; i < eachElement.length; i++) {
       eachElement[i].style.display = "none";
-    }
+    }  //to not display hangman if errrorCounter is 0;
   } else if (errorCounter === 1) {
     animationById("hangman-base");
   } else if (errorCounter === 2) {
