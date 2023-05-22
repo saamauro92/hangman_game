@@ -174,8 +174,8 @@ function runGame(choosenWord) {
 /**This function  creates an array of the choosenWord, gets indices that matches the word , and also check for the wrong letters*/
 function checkIfWordMatchesKey(word, key) {
   if (gameStatus === "off") return;
-   indexes = [];
-   wordArray = [];
+  indexes = [];
+  wordArray = [];
   //Makes an array of the choosenWord in order to match the indexes in case there is a space on the word using the wordarray[]
   if (word !== null) {
     for (let letter of word) {
@@ -191,15 +191,8 @@ function checkIfWordMatchesKey(word, key) {
   }
 
   //Check for wrong letters
-  if (
-    !wordArray.includes(key) &&
-    !wrongLetters.includes(key) &&
-    alphabet.includes(key)
-  ) {
-    wrongLetters.push(key);
-    printWrongLetter(wrongLetters);
-    incrementErrorCounter();
-  }
+  getWrongLetters(wordArray, key);
+
   console.log(wordArray);
   printLetter(indexes, wordArray);
 
@@ -210,19 +203,29 @@ function checkIfWordMatchesKey(word, key) {
 }
 
 //This functions get indices of letters matched using the indexexs[]
-function getMatchingIndexes(wordArray, key){
-    for (let i = 0; i < wordArray.length; i++) {
-        if (wordArray[i] === " ") {
-          continue;
-        } else if (wordArray[i] === key) {
-          indexes.push(i);
-          matchingLetters.push(key);
-          console.log(matchingLetters, "matching");
-        }
-      }
+function getMatchingIndexes(wordArray, key) {
+  for (let i = 0; i < wordArray.length; i++) {
+    if (wordArray[i] === " ") {
+      continue;
+    } else if (wordArray[i] === key) {
+      indexes.push(i);
+      matchingLetters.push(key);
+      console.log(matchingLetters, "matching");
+    }
+  }
 }
-
-
+//This functions gets the wrong letters to display and incrementErrorCounter();
+function getWrongLetters(wordArray, key) {
+  if (
+    !wordArray.includes(key) &&
+    !wrongLetters.includes(key) &&
+    alphabet.includes(key)
+  ) {
+    wrongLetters.push(key);
+    printWrongLetter(wrongLetters);
+    incrementErrorCounter();
+  }
+}
 
 //** This function takes two arrays and compare them to see if values are the same in despite their order, will return the score + 1  */
 function compareArrays(arr1, arr2) {
