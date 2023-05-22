@@ -67,6 +67,7 @@ body {
 .words-container {
   display: flex;
   max-width: 500px;
+  flex-shrink: 1;
 }
 
 .wrong-letters {
