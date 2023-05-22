@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   //Get play button
   let playButton = document.getElementById("play-button");
+  
   /** This event sets the game taking player name and category in order to start*/
   playButton.addEventListener("click", function () {
     player = document.getElementById("player-name").value;
