@@ -1,5 +1,7 @@
 let wrongLetters = [];
 let matchingLetters = [];
+let indexes = [];
+let wordArray = [];
 let errorCounter = 0;
 let scoreCounter = 0;
 var category;
@@ -168,12 +170,12 @@ function runGame(choosenWord) {
     }
   }
 }
+
 /**This function  creates an array of the choosenWord, gets indices that matches the word , and also check for the wrong letters*/
 function checkIfWordMatchesKey(word, key) {
   if (gameStatus === "off") return;
-  let indexes = [];
-  let wordArray = [];
-
+   indexes = [];
+   wordArray = [];
   //Makes an array of the choosenWord in order to match the indexes in case there is a space on the word using the wordarray[]
   if (word !== null) {
     for (let letter of word) {
@@ -185,15 +187,7 @@ function checkIfWordMatchesKey(word, key) {
     }
 
     //Get indices of letters matched using the indexexs[]
-    for (let i = 0; i < wordArray.length; i++) {
-      if (wordArray[i] === " ") {
-        continue;
-      } else if (wordArray[i] === key) {
-        indexes.push(i);
-        matchingLetters.push(key);
-        console.log(matchingLetters, "matching");
-      }
-    }
+    getMatchingIndexes(wordArray, key);
   }
 
   //Check for wrong letters
@@ -214,6 +208,21 @@ function checkIfWordMatchesKey(word, key) {
     compareArrays(wordArray, matchingLetters);
   }, 1000);
 }
+
+//This functions get indices of letters matched using the indexexs[]
+function getMatchingIndexes(wordArray, key){
+    for (let i = 0; i < wordArray.length; i++) {
+        if (wordArray[i] === " ") {
+          continue;
+        } else if (wordArray[i] === key) {
+          indexes.push(i);
+          matchingLetters.push(key);
+          console.log(matchingLetters, "matching");
+        }
+      }
+}
+
+
 
 //** This function takes two arrays and compare them to see if values are the same in despite their order, will return the score + 1  */
 function compareArrays(arr1, arr2) {
