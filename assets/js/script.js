@@ -267,9 +267,9 @@ function hangmanDisplay() {
       eachElement[i].style.display = "none";
     }
   } else if (errorCounter === 1) {
-    document.getElementById("hangman-base").style.display = "block";
+    animationById("hangman-base");
   } else if (errorCounter === 2) {
-    document.getElementById("hangman-stand").style.display = "block";
+    animationById("hangman-stand");
   } else if (errorCounter === 3) {
     let topStand = document.getElementsByClassName("hangman-top-stand");
 
@@ -277,22 +277,22 @@ function hangmanDisplay() {
       topStand[i].style.display = "block";
     }
   } else if (errorCounter === 4) {
-    document.getElementById("hangman-rope").style.display = "block";
+    animationById("hangman-rope");
   } else if (errorCounter === 5) {
     let head = document.getElementsByClassName("hangman-head");
     for (let i = 0; i < head.length; i++) {
       head[i].style.display = "block";
     }
   } else if (errorCounter === 6) {
-    document.getElementById("hangman-body").style.display = "block";
+    animationById("hangman-body");
   } else if (errorCounter === 7) {
-    document.getElementById("hangman-right-arm").style.display = "block";
+    animationById("hangman-right-arm");
   } else if (errorCounter === 8) {
-    document.getElementById("hangman-left-arm").style.display = "block";
+    animationById("hangman-left-arm");
   } else if (errorCounter === 9) {
-    document.getElementById("hangman-right-leg").style.display = "block";
+    animationById("hangman-right-leg");
   } else if (errorCounter === 10) {
-    document.getElementById("hangman-left-leg").style.display = "block";
+    animationById("hangman-left-leg");
     setTimeout(()=> {
       alert(`YOU GOT HANGED! the correct answer is ${choosenWord}`);
       choosenWord = getRandomWordBycategory(category);
@@ -300,6 +300,27 @@ function hangmanDisplay() {
     }, 500)
   }
 }
+
+/**This function takes an id and creates a svg animation based on https://jakearchibald.com/2013/animated-line-drawing-svg/ */
+function animationById(id) {
+    let = path = document.getElementById(id);
+    path.style.display = "block";
+    var length = path.getTotalLength();
+    // Clear any previous transition
+    path.style.transition = path.style.WebkitTransition = "none";
+    // Set up the starting positions
+    path.style.strokeDasharray = length + " " + length;
+    path.style.strokeDashoffset = length;
+    // Trigger a layout so styles are calculated & the browser
+    // picks up the starting position before animating
+    path.getBoundingClientRect();
+    // Define our transition
+    path.style.transition = path.style.WebkitTransition =
+      "stroke-dashoffset 0.5s ease-in-out";
+    // Go!
+    path.style.strokeDashoffset = "0";
+  }
+
 
 let countries = [
   {
