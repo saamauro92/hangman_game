@@ -271,18 +271,11 @@ function hangmanDisplay() {
   } else if (errorCounter === 2) {
     animationById("hangman-stand");
   } else if (errorCounter === 3) {
-    let topStand = document.getElementsByClassName("hangman-top-stand");
-
-    for (let i = 0; i < topStand.length; i++) {
-      topStand[i].style.display = "block";
-    }
+    animationByClass("hangman-top-stand");
   } else if (errorCounter === 4) {
     animationById("hangman-rope");
   } else if (errorCounter === 5) {
-    let head = document.getElementsByClassName("hangman-head");
-    for (let i = 0; i < head.length; i++) {
-      head[i].style.display = "block";
-    }
+    animationByClass("hangman-head");
   } else if (errorCounter === 6) {
     animationById("hangman-body");
   } else if (errorCounter === 7) {
@@ -321,6 +314,27 @@ function animationById(id) {
     path.style.strokeDashoffset = "0";
   }
 
+/**This function takes a class and creates a svg animation based on https://jakearchibald.com/2013/animated-line-drawing-svg/ */
+  function animationByClass(className) {
+    let path = document.getElementsByClassName(className);
+    for (let i = 0; i < path.length; i++) {
+      path[i].style.display = "block";
+      let length = path[i].getTotalLength();
+      // Clear any previous transition
+      path[i].style.transition = path[i].style.WebkitTransition = "none";
+      // Set up the starting positions
+      path[i].style.strokeDasharray = length + " " + length;
+      path[i].style.strokeDashoffset = length;
+      // Trigger a layout so styles are calculated & the browser
+      // picks up the starting position before animating
+      path[i].getBoundingClientRect();
+      // Define our transition
+      path[i].style.transition = path[i].style.WebkitTransition =
+        "stroke-dashoffset 0.5s ease-in-out";
+      // Go!
+      path[i].style.strokeDashoffset = "0";
+    }
+  }
 
 let countries = [
   {
