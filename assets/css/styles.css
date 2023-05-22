@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +11,7 @@ body {
   align-items: center;
   height: 100vh;
   letter-spacing: 0.1rem;
+  font-family: "Bad Script", cursive;
 }
 /* GAME SECTION */
 #game {
