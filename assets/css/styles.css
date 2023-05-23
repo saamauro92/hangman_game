@@ -227,6 +227,9 @@ button:focus {
       ),
       linear-gradient(#eee 0.1em, transparent 0.1em);
   }
+  h1 {
+    font-size: 22px;
+  }
 
   .game-container {
     width: 85%;
@@ -258,7 +261,6 @@ button:focus {
 .game-options-action {
   margin: 10px auto;
 }
-
 
   /* GAME SECTION */
   #game {
