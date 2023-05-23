@@ -236,4 +236,26 @@ button:focus {
   }
 
 
+  /* GAME OPTIONS */
+
+  #game-options {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
+  .game-options-name,
+  .game-options-category {
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 5%;
+  }
+
+  input[type="text"],
+  select {
+    width: 60%;
+  }
+
+
 }
