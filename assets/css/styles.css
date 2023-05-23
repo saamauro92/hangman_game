@@ -255,5 +255,10 @@ button:focus {
     width: 60%;
   }
 
+.game-options-action {
+  margin: 10px auto;
+}
+
+
 
 }
