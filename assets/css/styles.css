@@ -239,10 +239,8 @@ button:focus {
   /* GAME OPTIONS */
 
   #game-options {
-    margin-top: 60px;
-    display: flex;
     flex-wrap: wrap;
-
+    flex-grow: 0;
   }
 
   .game-options-name,
