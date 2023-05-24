@@ -218,14 +218,6 @@ button:focus {
   border: 4px solid #000;
   outline: none;
 }
-/* hidden input to show keyboard in mobile */
-/* https://stackoverflow.com/questions/6837543/show-virtual-keyboard-on-mobile-phones-in-javascript
-*/
-
-#show-keyboard-mobile {
-  visibility:hidden;
-}
-
 
 
 /* for medium screen sizes from 1208px px wide and down */
