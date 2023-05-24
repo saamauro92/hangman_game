@@ -221,8 +221,8 @@ button:focus {
 
 
 
-/* for medium screen sizes from 768px px wide and down */
-@media screen and (max-width: 768px) {
+/* for medium screen sizes from 1208px px wide and down */
+@media screen and (max-width: 1208px) {
 
   body {
     background-image: linear-gradient(90deg,
