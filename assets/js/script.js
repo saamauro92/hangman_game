@@ -84,6 +84,28 @@ document.addEventListener("DOMContentLoaded", function () {
     gameStatus = "on";
   });
 
+  //this open up the keyboard on mobile version by creating a focus in a hidden input
+  //based on this tutorial https://stackoverflow.com/questions/6837543/show-virtual-keyboard-on-mobile-phones-in-javascript
+  
+  if(window.innerWidth < 786){
+     // Create a hidden input element
+     let hiddenInput = document.createElement('input');
+     hiddenInput.setAttribute('type', 'text');
+     hiddenInput.style.position = 'absolute';
+     hiddenInput.style.opacity = '0';
+     hiddenInput.style.pointerEvents = 'none';
+     document.body.appendChild(hiddenInput);
+ 
+     // Focus on the hidden input element when the document is tapped
+     document.addEventListener('click', function() {
+       hiddenInput.focus();
+     });
+ 
+     // Remove the hidden input element after the keyboard is closed
+     hiddenInput.addEventListener('blur', function() {
+       document.body.removeChild(hiddenInput);
+     });
+  }
 });
 
 //get title
