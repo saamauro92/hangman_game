@@ -83,6 +83,11 @@ document.addEventListener("DOMContentLoaded", function () {
     //set game to status on 
     gameStatus = "on";
   });
+
+  //this open up the keyboard on mobile version by creating a focus in a hidden input
+  if(window.innerWidth < 786){
+    document.getElementById("show-keyboard-mobile").focus();
+  }
 });
 
 //get title
