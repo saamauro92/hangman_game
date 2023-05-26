@@ -1,11 +1,13 @@
+/* main font */
 @import url("https://fonts.googleapis.com/css2?family=Bad+Script&display=swap");
 
+/* html styles */
 * {
   margin: 0;
   padding: 0;
   font-family: "Bad Script", cursive;
 }
-
+/* body styles */
 body {
   background-color: #fff;
   background-image: linear-gradient(90deg,
@@ -23,7 +25,7 @@ body {
   letter-spacing: 0.1rem;
 }
 
-/* GAME CONTAINER */
+/* game container */
 .game-container {
   width: 60vw;
   height: auto;
@@ -35,7 +37,7 @@ body {
   padding: 2%;
 }
 
-/* GAME SECTION */
+/* game section */
 #game {
   display: none;
   width: 90%;
@@ -50,7 +52,7 @@ body {
   align-items: center;
 }
 
-/* HANGMAN SVG */
+/* Hangman SVG */
 #hangman {
   max-width: 500px;
   margin-top: 100px;
@@ -81,14 +83,14 @@ body {
   font-size: 22px;
   gap: 10px;
 }
-
+/* game action */
 .game-actions {
   display: flex;
   gap: 20px;
   flex-grow: 1;
 }
 
-/* SCORES DISPLAY */
+/* error and game scores  */
 
 #display-errors {
   position: absolute;
@@ -110,7 +112,7 @@ body {
   margin-top: 10px;
 }
 
-/* H1 */
+/* h1 */
 
 h1 {
   letter-spacing: 0.5rem;
@@ -134,7 +136,7 @@ h1 {
   top: 10px;
 }
 
-/* GAME OPTIONS */
+/* game options*/
 #game-options {
   margin-top: 60px;
   display: flex;
@@ -156,7 +158,7 @@ h1 {
   margin: 0 auto;
 }
 
-/* GAME LETTERS */
+/* game letters */
 
 .words-container {
   display: flex;
@@ -185,7 +187,7 @@ h1 {
   text-transform: uppercase;
 }
 
-/* INPUT & SELECT */
+/* input type text and select */
 input[type="text"],
 select {
   border: none;
@@ -198,7 +200,7 @@ select {
 }
 
 
-/* BUTTONS */
+/* buttons */
 button {
   background: transparent;
   padding: 10px;
@@ -231,7 +233,7 @@ button:focus {
         transparent 21px),
       linear-gradient(#eee 0.1em, transparent 0.1em);
   }
-
+/* responsive h1 */
   h1 {
     font-size: 22px;
   }
@@ -244,7 +246,7 @@ button:focus {
   }
 
 
-  /* GAME OPTIONS */
+  /* game options */
 
   #game-options {
     flex-wrap: wrap;
@@ -257,7 +259,7 @@ button:focus {
     flex-wrap: wrap;
     padding: 5%;
   }
-
+/* input type text and select */
   input[type="text"],
   select {
     width: 60%;
@@ -267,7 +269,7 @@ button:focus {
     margin: 10px auto;
   }
 
-  /* GAME SECTION */
+  /* game section */
   #game {
     width: 100%;
     height: 100%;
@@ -276,7 +278,7 @@ button:focus {
   .game-display-container {
     flex-direction: column;
   }
-
+/* Hangman svg */
   #hangman {
     height: 300px;
   }
