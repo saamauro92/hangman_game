@@ -103,7 +103,6 @@ document.addEventListener("keydown", function (event) {
   ) {
     let key = event.key;
     checkIfWordMatchesKey(choosenWord, key);
-    console.log(key);
   }
 });
 
@@ -192,7 +191,6 @@ function getMatchingIndexes(wordArray, key) {
     } else if (wordArray[i] === key) {
       indexes.push(i);
       matchingLetters.push(key);
-      console.log(matchingLetters, "matching");
     }
   }
 }
