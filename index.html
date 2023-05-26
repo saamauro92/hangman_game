@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,18 +9,19 @@
   <link rel="icon" type="image/png" href="assets/images/hangman.png">
   <title>Hangman</title>
 </head>
+
 <body>
   <!-- Game container -->
   <div class="game-container">
     <!-- Player name -->
     <p id="display-player"> </p>
     <!-- Title -->
-    <h1 id="title">Hangman</h1>
+    <h1 id="title" aria-label="go to main view">Hangman</h1>
     <!-- First Section View -->
     <div id="game-options">
       <div class="game-options-name">
         <p>Write your name:</p>
-        <input type="text" id="player-name" maxlength="15" />
+        <input type="text" id="player-name" name="name" maxlength="15" />
       </div>
       <!-- Select Category -->
       <div class="game-options-category">
@@ -32,7 +34,7 @@
       </div>
       <!-- Play Button -->
       <div class="game-options-action">
-        <button id="play-button">Play Game</button>
+        <button id="play-button" aria-label="play game">Play Game</button>
       </div>
       <!-- Display error -->
       <p id="display-name-error"></p>
@@ -82,10 +84,10 @@
           <p id="hint-text"></p>
         </div>
       </div>
-<!-- Game action buttons -->
+      <!-- Game action buttons -->
       <div class="game-actions">
-        <button id="hint-button" tabindex="0">Hint</button>
-        <button id="next-button" tabindex="1">Next</button>
+        <button id="hint-button" tabindex="0" aria-label="display hint">Hint</button>
+        <button id="next-button" tabindex="0" aria-label="get next word to guess">Next</button>
       </div>
       <!-- Error score -->
       <div id="display-errors">
@@ -101,4 +103,5 @@
   </div>
   <script src="assets/js/script.js"> </script>
 </body>
+
 </html>
