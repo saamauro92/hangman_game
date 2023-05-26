@@ -1,6 +1,6 @@
 let wrongLetters = []; // to store wrong letter 
 let matchingLetters = []; // to store matching letters 
-let indexes = [];// to store indexes of matching letters
+let indexes = []; // to store indexes of matching letters
 let wordArray = []; // to create an array of choosenWord
 let errorCounter = 0; // to display error
 let scoreCounter = 0; // to display score
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /** This event sets the game taking player name and category in order to start*/
   playButton.addEventListener("click", function () {
 
-   const player = document.getElementById("player-name").value;//get players name
+    const player = document.getElementById("player-name").value; //get players name
     //if no player name, display error and stop 
     if (!player) {
       return (document.getElementById("display-name-error").innerHTML =
@@ -290,27 +290,27 @@ function hangmanDisplay() {
     const eachElement = hangmanSvg.getElementsByTagName("*");
     for (let i = 0; i < eachElement.length; i++) {
       eachElement[i].style.display = "none";
-    }  //to not display hangman if errrorCounter is 0;
+    } //to not display hangman if errrorCounter is 0;
   } else if (errorCounter === 1) {
-    animationById("hangman-base");
+    drawAnimation("id", "hangman-base");
   } else if (errorCounter === 2) {
-    animationById("hangman-stand");
+    drawAnimation("id", "hangman-stand");
   } else if (errorCounter === 3) {
-    animationByClass("hangman-top-stand");
+    drawAnimation("class", "hangman-top-stand");
   } else if (errorCounter === 4) {
-    animationById("hangman-rope");
+    drawAnimation("id", "hangman-rope");
   } else if (errorCounter === 5) {
-    animationByClass("hangman-head");
+    drawAnimation("class", "hangman-head");
   } else if (errorCounter === 6) {
-    animationById("hangman-body");
+    drawAnimation("id", "hangman-body");
   } else if (errorCounter === 7) {
-    animationById("hangman-right-arm");
+    drawAnimation("id", "hangman-right-arm");
   } else if (errorCounter === 8) {
-    animationById("hangman-left-arm");
+    drawAnimation("id", "hangman-left-arm");
   } else if (errorCounter === 9) {
-    animationById("hangman-right-leg");
+    drawAnimation("id", "hangman-right-leg");
   } else if (errorCounter === 10) {
-    animationById("hangman-left-leg");
+    drawAnimation("id", "hangman-left-leg");
     setTimeout(() => {
       alert(`YOU GOT HANGED! the correct answer is ${choosenWord}`);
       choosenWord = getRandomWordBycategory(category);
@@ -319,45 +319,37 @@ function hangmanDisplay() {
   }
 }
 
-/**This function takes an id and creates a svg animation based on https://jakearchibald.com/2013/animated-line-drawing-svg/ */
-function animationById(id) {
-  let = path = document.getElementById(id);
-  path.style.display = "block";
-  var length = path.getTotalLength();
-  // Clear any previous transition
-  path.style.transition = path.style.WebkitTransition = "none";
-  // Set up the starting positions
-  path.style.strokeDasharray = length + " " + length;
-  path.style.strokeDashoffset = length;
-  // Trigger a layout so styles are calculated & the browser
-  // picks up the starting position before animating
-  path.getBoundingClientRect();
-  // Define our transition
-  path.style.transition = path.style.WebkitTransition =
-    "stroke-dashoffset 0.5s ease-in-out";
-  // Go!
-  path.style.strokeDashoffset = "0";
-}
+/**This function takes two arguments, getBy "id" or "class" and either the name of id or className to creates a svg animation based on https://jakearchibald.com/2013/animated-line-drawing-svg/ */
 
-/**This function takes a class and creates a svg animation based on https://jakearchibald.com/2013/animated-line-drawing-svg/ */
-function animationByClass(className) {
-  let path = document.getElementsByClassName(className);
-  for (let i = 0; i < path.length; i++) {
-    path[i].style.display = "block";
-    let length = path[i].getTotalLength();
+function drawAnimation(getBy, name) {
+  let paths;
+  if (getBy === 'id') {
+    let path = document.getElementById(name);
+    //override paths as an array of the element by id in order to loop it after
+    paths = [path]
+  } else if (getBy === "class") {
+    //get all the elements with that class in order to loop it after
+    paths = document.getElementsByClassName(name);
+  }
+
+  for (let i = 0; i < paths.length; i++) {
+    const path = paths[i];
+    // Animation code based on https://jakearchibald.com/2013/animated-line-drawing-svg/
+    path.style.display = "block";
+    let length = path.getTotalLength();
     // Clear any previous transition
-    path[i].style.transition = path[i].style.WebkitTransition = "none";
+    path.style.transition = path.style.WebkitTransition = "none";
     // Set up the starting positions
-    path[i].style.strokeDasharray = length + " " + length;
-    path[i].style.strokeDashoffset = length;
+    path.style.strokeDasharray = length + " " + length;
+    path.style.strokeDashoffset = length;
     // Trigger a layout so styles are calculated & the browser
     // picks up the starting position before animating
-    path[i].getBoundingClientRect();
+    path.getBoundingClientRect();
     // Define our transition
-    path[i].style.transition = path[i].style.WebkitTransition =
+    path.style.transition = path.style.WebkitTransition =
       "stroke-dashoffset 0.5s ease-in-out";
     // Go!
-    path[i].style.strokeDashoffset = "0";
+    path.style.strokeDashoffset = "0";
   }
 }
 
@@ -369,8 +361,8 @@ let movies;
 async function fetchGameData() {
   const gameDataFetched = await fetch('assets/data/data.json');
   let data = await gameDataFetched.json();
- countries = data.countries;
- animals = data.animals;
- movies = data.movies;
+  countries = data.countries;
+  animals = data.animals;
+  movies = data.movies;
 
 }
