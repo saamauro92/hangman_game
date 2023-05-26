@@ -34,7 +34,7 @@ var alphabet = [
   "y",
   "z",
 ]; // to make sure we are using only the alphabet keys from keyboard
-let player;  // to store players name
+
 var gameStatus = "off"; // to set game status
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -51,12 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.getItem("category");
   }
   //Get play button
-  let playButton = document.getElementById("play-button");
+  const playButton = document.getElementById("play-button");
 
   /** This event sets the game taking player name and category in order to start*/
   playButton.addEventListener("click", function () {
 
-    player = document.getElementById("player-name").value;//get players name
+   const player = document.getElementById("player-name").value;//get players name
     //if no player name, display error and stop 
     if (!player) {
       return (document.getElementById("display-name-error").innerHTML =
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //get title
-let title = document.getElementById("title");
+const title = document.getElementById("title");
 title.addEventListener("click", goToMainSection);
 
 /**This function changes the game section to the first view */
@@ -100,7 +100,7 @@ function goToMainSection() {
 }
 
 //get hint button
-let hintButton = document.getElementById("hint-button");
+const hintButton = document.getElementById("hint-button");
 hintButton.addEventListener("click", displayHint);
 
 /** This function  displays the hint according the choosenWord */
@@ -113,7 +113,7 @@ function displayHint() {
 }
 
 //get next button
-let nextWordButton = document.getElementById("next-button");
+const nextWordButton = document.getElementById("next-button");
 nextWordButton.addEventListener("click", nextWord);
 
 // This function calls for a new word to be randomized
