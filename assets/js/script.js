@@ -197,18 +197,14 @@ function checkIfWordMatchesKey(word, key) {
         wordArray.push(letter);
       }
     }
-
     //Get indices of letters matched using the indexexs[]
     getMatchingIndexes(wordArray, key);
   }
-
   //Check for wrong letters
   getWrongLetters(wordArray, key);
-
-  console.log(wordArray);
+  //Send indexes and wordArray to print letters
   printLetter(indexes, wordArray);
-
-  //compare if the choosenword matches all the letters in order to score
+  //Compare if the choosenword matches all the letters in order to score
   setTimeout(() => {
     compareArrays(wordArray, matchingLetters);
   }, 1000);
@@ -320,7 +316,6 @@ function hangmanDisplay() {
 }
 
 /**This function takes two arguments, getBy "id" or "class" and either the name of id or className to creates a svg animation based on https://jakearchibald.com/2013/animated-line-drawing-svg/ */
-
 function drawAnimation(getBy, name) {
   let paths;
   if (getBy === 'id') {
@@ -364,5 +359,4 @@ async function fetchGameData() {
   countries = data.countries;
   animals = data.animals;
   movies = data.movies;
-
 }
