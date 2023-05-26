@@ -6,35 +6,6 @@ let errorCounter = 0; // to display error
 let scoreCounter = 0; // to display score
 var category; // to store game category
 var choosenWord; // to store the word to guess
-var alphabet = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-]; // to make sure we are using only the alphabet keys from keyboard
-
 var gameStatus = "off"; // to set game status
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -126,7 +97,10 @@ function nextWord() {
 
 // Gets the key value when pressed
 document.addEventListener("keydown", function (event) {
-  if (gameStatus === "on") {
+  if (
+    gameStatus === "on" &&
+    event.keyCode >= 65 && event.keyCode <= 90 // to make sure we are only using the alphabet keys from keyboard
+  ) {
     let key = event.key;
     checkIfWordMatchesKey(choosenWord, key);
     console.log(key);
@@ -226,8 +200,7 @@ function getMatchingIndexes(wordArray, key) {
 function getWrongLetters(wordArray, key) {
   if (
     !wordArray.includes(key) &&
-    !wrongLetters.includes(key) &&
-    alphabet.includes(key)
+    !wrongLetters.includes(key)
   ) {
     wrongLetters.push(key);
     printWrongLetter(wrongLetters);
