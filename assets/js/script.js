@@ -126,13 +126,12 @@ function nextWord() {
 
 // Gets the key value when pressed
 document.addEventListener("keydown", function (event) {
-
   if (
     gameStatus === "on" &&
     event.keyCode >= 65 && event.keyCode <= 90 // to make sure we are only using the alphabet keys from keyboard
   ) {
     let key = event.key;
-    checkIfWordMatchesKey(choosenWord, key);
+    checkIfWordMatchesKey(choosenWord, key.toLowerCase());
   }
 });
 
