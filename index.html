@@ -102,7 +102,7 @@
     </div>
     <!-- Game instructions modal -->
     <div class="modal" id="instructions-modal">
-      <p id="close-modal" tabindex="0">X</p>
+      <p class="close-modal" data-type="instructions-modal" tabindex="0">X</p>
       <h2>Game Instructions</h2>
       <p>1. The objective of the game is to guess the hidden word by typing in letters.</p>
       <p> 2. You have 10 attempts to guess the word correctly. The number of errors will be displayed.</p>
@@ -113,6 +113,13 @@
     </div>
     <!-- Game instructions button -->
     <button id="instructions-button" tabindex="0"> Game Instructions </button>
+        <!-- Game error -->
+        <div class="modal" id="error-modal">
+          <p class="close-modal" data-type="hanged-modal" tabindex="0">X</p>
+          <h2 id="hanged-man"></h2>
+          <p>You got Hanged!</p>
+          <button class="close-modal close-modal-button" data-type="hanged-modal" tabindex="0">Play again</button>
+        </div>
   </div>
   <script src="assets/js/script.js"> </script>
 </body>
