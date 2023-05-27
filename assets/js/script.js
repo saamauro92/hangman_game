@@ -7,6 +7,7 @@ let scoreCounter = 0; // to display score
 var category; // to store game category
 var choosenWord; // to store the word to guess
 var gameStatus = "off"; // to set game status
+var player;
 
 document.addEventListener("DOMContentLoaded", function () {
   //fetch countries, animales and movies data from assets/data/data.json
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /** This event sets the game taking player name and category in order to start*/
   playButton.addEventListener("click", function () {
 
-    const player = document.getElementById("player-name").value; //get players name
+     player = document.getElementById("player-name").value; //get players name
     //if no player name, display error and stop 
     if (!player) {
       return (document.getElementById("display-name-error").innerHTML =
@@ -61,11 +62,19 @@ document.addEventListener("DOMContentLoaded", function () {
   gameInstructionsButton.addEventListener("click", function () {
     toggleModal('instructions-modal');
   })
-  //get modal closing button and event 
-  const closeModal = document.getElementById("close-modal");
-  closeModal.addEventListener("click", function () {
-    toggleModal('instructions-modal');
-  })
+
+  //get modals closing button and event 
+  const closeModals = document.getElementsByClassName("close-modal");
+  for (let closeModal of closeModals) {
+    closeModal.addEventListener("click", function () {
+      if (this.getAttribute("data-type") === "instructions-modal") {
+        toggleModal('instructions-modal');
+      } else if (this.getAttribute("data-type") === "hanged-modal") {
+        toggleModal('error-modal')
+      }
+    })
+  }
+
 
 });
 
@@ -116,10 +125,7 @@ function nextWord() {
 
 // Gets the key value when pressed
 document.addEventListener("keydown", function (event) {
-  //Close modal if user press ESC key;
-  if (event.key === "Escape") {
-    toggleModal('instructions-modal');
-  }
+
   if (
     gameStatus === "on" &&
     event.keyCode >= 65 && event.keyCode <= 90 // to make sure we are only using the alphabet keys from keyboard
@@ -302,10 +308,11 @@ function hangmanDisplay() {
   } else if (errorCounter === 10) {
     drawAnimation("id", "hangman-left-leg");
     setTimeout(() => {
-      alert(`YOU GOT HANGED! the correct answer is ${choosenWord}`);
       choosenWord = getRandomWordBycategory(category);
       restartCounters();
-    }, 500);
+    }, 1000);
+    toggleModal('error-modal')
+    document.getElementById("hanged-man").textContent = `Sorry! ${player}`
   }
 }
 
