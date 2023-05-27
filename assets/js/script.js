@@ -71,10 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleModal('instructions-modal');
       }else if (this.getAttribute("data-type") === "error-modal") {
         toggleModal('error-modal')
+      }else if (this.getAttribute("data-type") === "success-modal") {
+        toggleModal('success-modal')
       }
     })
   }
-
 
 });
 
@@ -273,10 +274,11 @@ function incrementErrorCounter() {
 
 /** This function increments scoreCounter by one */
 function incrementScoreCounter() {
-  alert("Well Done!");
   scoreCounter += 1;
   document.getElementById("score-counter").innerText = scoreCounter;
   nextWord();
+  toggleModal('success-modal')
+  document.getElementById("success-message").textContent = `Well done ${player}!`
 }
 
 /**This function gets the hangman svg and return it on parts according to the errorCounters */
