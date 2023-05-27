@@ -55,8 +55,27 @@ document.addEventListener("DOMContentLoaded", function () {
     gameStatus = "on";
   });
 
+  //get game instructions button and event
+  //https://www.w3schools.com/howto/howto_js_popup.asp
+  const gameInstructionsButton = document.getElementById("instructions-button");
+  gameInstructionsButton.addEventListener("click", function () {
+    toggleModal('instructions-modal');
+  })
+  //get modal closing button and event 
+  const closeModal = document.getElementById("close-modal");
+  closeModal.addEventListener("click", function () {
+    toggleModal('instructions-modal');
+  })
 
 });
+
+/**This functions takes an id and toggles body background and show modal */
+function toggleModal(id) {
+  const popup = document.getElementById(id);
+  const body = document.body;
+  body.classList.toggle("body-background");
+  popup.classList.toggle("show-modal");
+}
 
 //get title
 const title = document.getElementById("title");
@@ -97,6 +116,10 @@ function nextWord() {
 
 // Gets the key value when pressed
 document.addEventListener("keydown", function (event) {
+  //Close modal if user press ESC key;
+  if (event.key === "Escape") {
+    toggleModal('instructions-modal');
+  }
   if (
     gameStatus === "on" &&
     event.keyCode >= 65 && event.keyCode <= 90 // to make sure we are only using the alphabet keys from keyboard
