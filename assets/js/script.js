@@ -312,7 +312,7 @@ function hangmanDisplay() {
       restartCounters();
     }, 1000);
     toggleModal('error-modal')
-    document.getElementById("hanged-man").textContent = `Sorry! ${player}`
+    document.getElementById("hanged-man").textContent = `Sorry ${player}!, the correct anser was ${choosenWord.toUpperCase()}`
   }
 }
 
