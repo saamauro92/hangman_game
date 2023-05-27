@@ -69,8 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
     closeModal.addEventListener("click", function () {
       if (this.getAttribute("data-type") === "instructions-modal") {
         toggleModal('instructions-modal');
-      } else if (this.getAttribute("data-type") === "hanged-modal") {
-        toggleModal('error-modal')
       }else if (this.getAttribute("data-type") === "error-modal") {
         toggleModal('error-modal')
       }
