@@ -268,11 +268,17 @@ button:focus {
   background: #868686;
 }
 
-#close-modal {
+.close-modal {
   position: absolute;
   right: 10px;
   top: 10px;
   cursor: pointer;
+}
+
+.close-modal-button {
+  position:relative;
+  align-self: center;
+  width:50%;
 }
 
 /* Add animation (fade in the modal) */
