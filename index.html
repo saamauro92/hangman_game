@@ -20,12 +20,12 @@
     <!-- First Section View -->
     <div id="game-options">
       <div class="game-options-name">
-        <p>Write your name:</p>
+        <label for="player-name">Write your name:</label>
         <input type="text" id="player-name" name="name" maxlength="15">
       </div>
       <!-- Select Category -->
       <div class="game-options-category">
-        <p>Select Category:</p>
+        <label for="category-selector">Select Category:</label>
         <select id="category-selector">
           <option value="countries">Countries</option>
           <option value="animals">Animals</option>
@@ -134,7 +134,7 @@
       <p class="close-modal" data-type="category-modal" tabindex="0">X</p>
       <!-- Select Category -->
       <div class="game-options-category">
-        <p>Select Category:</p>
+        <label id="game-view-category-selector">Select Category:</label>
         <select id="game-view-category-selector">
           <option value="countries">Countries</option>
           <option value="animals">Animals</option>
