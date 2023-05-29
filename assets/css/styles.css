@@ -324,6 +324,7 @@ button:focus {
         #abced4 20px,
         transparent 21px),
       linear-gradient(#eee 0.1em, transparent 0.1em);
+      height:100%;
   }
 
   /* responsive h1 */
