@@ -396,4 +396,13 @@ button:focus {
     width: 80%;
     height: 80%;
   }
+
+  /* error and game scores  */
+#display-errors,
+#display-score {
+  gap: 20px;
+  top: 6%;
+  bottom: 0%;
+}
+
 }
