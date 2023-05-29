@@ -239,6 +239,7 @@ button:focus {
   border: 4px solid #000;
   outline: none;
 }
+
 /* Modal styles */
 /* https://www.w3schools.com/howto/howto_js_popup.asp*/
 .modal {
@@ -263,6 +264,7 @@ button:focus {
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
 }
+
 /* Change body background when modal is on */
 .body-background {
   background: #868686;
@@ -276,9 +278,20 @@ button:focus {
 }
 
 .close-modal-button {
-  position:relative;
+  position: relative;
   align-self: center;
-  width:50%;
+  width: 50%;
+}
+
+#change-category-button {
+  margin-top: 10px;
+  color: #fff;
+  background: #000;
+}
+#change-category-button:hover {
+  margin-top: 10px;
+  color: #fff;
+  background: #ccc;
 }
 
 /* Add animation (fade in the modal) */
@@ -376,7 +389,8 @@ button:focus {
     width: 20px;
     font-size: 16px;
   }
-/* Game instructions modal */
+
+  /* Game instructions modal */
   .game-instructions-modal {
     width: 80%;
     height: 80%;
