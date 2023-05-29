@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!player) {
       return (document.getElementById("display-name-error").innerHTML =
         "**Please complete your name");
+    }else {
+      document.getElementById("display-name-error").innerHTML = ""
     }
     //restarts all the counters, words and hangman displayed
     restartCounters();
