@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /** This event sets the game taking player name and category in order to start*/
   playButton.addEventListener("click", function () {
 
-     player = document.getElementById("player-name").value; //get players name
+    player = document.getElementById("player-name").value; //get players name
     //if no player name, display error and stop 
     if (!player) {
       return (document.getElementById("display-name-error").innerHTML =
@@ -69,13 +69,35 @@ document.addEventListener("DOMContentLoaded", function () {
     closeModal.addEventListener("click", function () {
       if (this.getAttribute("data-type") === "instructions-modal") {
         toggleModal('instructions-modal');
-      }else if (this.getAttribute("data-type") === "error-modal") {
+      } else if (this.getAttribute("data-type") === "error-modal") {
         toggleModal('error-modal')
-      }else if (this.getAttribute("data-type") === "success-modal") {
+      } else if (this.getAttribute("data-type") === "success-modal") {
         toggleModal('success-modal')
+      } else if (this.getAttribute("data-type") === "category-modal") {
+        toggleModal('category-modal')
       }
     })
   }
+
+  //get game change category button and event
+  const changeCategoryButton = document.getElementById("change-category-button");
+  changeCategoryButton.addEventListener("click", function () {
+    toggleModal('category-modal');
+  })
+
+  //get play again button from category change modal and restart the game
+  const playAgainByCategoryChanged = document.getElementById("restart-category-button");
+  playAgainByCategoryChanged.addEventListener("click", function () {
+    //get new category values
+    let selectCategory = document.getElementById("game-view-category-selector");
+    category = selectCategory.options[selectCategory.selectedIndex].value;
+    //save new category in localstorage
+    localStorage.setItem("category", category);
+    restartCounters()
+    //get random new word by new category
+    choosenWord = getRandomWordBycategory(category);
+  })
+
 
 });
 
