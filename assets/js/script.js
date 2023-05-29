@@ -6,7 +6,7 @@ let errorCounter = 0; // to display error
 let scoreCounter = 0; // to display score
 var category; // to store game category
 var choosenWord; // to store the word to guess
-var gameStatus = "off"; // to set game status
+var gameStatus = false; // to set game status
 var player;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //get random word by category
     choosenWord = getRandomWordBycategory(category);
     //set game to status on 
-    gameStatus = "on";
+    gameStatus = true;
   });
 
   //get game instructions button and event
@@ -119,6 +119,7 @@ function goToMainSection() {
   document.getElementById("display-player").style.display = "none";
   document.getElementById("game-options").style.display = "flex";
   document.getElementById("game").style.display = "none";
+  gameStatus = false;
 }
 
 //get hint button
@@ -149,7 +150,7 @@ function nextWord() {
 // Gets the key value when pressed
 document.addEventListener("keydown", function (event) {
   if (
-    gameStatus === "on" &&
+    gameStatus &&
     event.keyCode >= 65 && event.keyCode <= 90 // to make sure we are only using the alphabet keys from keyboard
   ) {
     let key = event.key;
@@ -209,7 +210,7 @@ function runGame(choosenWord) {
 
 /**This function  creates an array of the choosenWord, gets indices that matches the word , and also check for the wrong letters*/
 function checkIfWordMatchesKey(word, key) {
-  if (gameStatus === "off") return;
+  if (gameStatus === false) return;
   indexes = [];
   wordArray = [];
   //Makes an array of the choosenWord in order to match the indexes in case there is a space on the word using the wordarray[]
