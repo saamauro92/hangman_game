@@ -337,6 +337,7 @@ button:focus {
     border: none;
     flex-wrap: wrap;
     padding: 0px;
+    padding-top: 20px;
   }
 
   /* game options */
