@@ -113,8 +113,6 @@
       <p>4. You can click the "Next" button to start a new game with a different word.</p>
       <p>5. Keep playing and try to guess as many words as possible!</p>
     </div>
-    <!-- Game instructions button -->
-    <button id="instructions-button" tabindex="0"> Game Instructions </button>
     <!-- Game error modal -->
     <div class="modal" id="error-modal">
       <p class="close-modal" data-type="error-modal" tabindex="0">X</p>
@@ -129,22 +127,25 @@
       <p>You got 1+ point!</p>
       <button class="close-modal close-modal-button" data-type="success-modal" tabindex="0">Play again</button>
     </div>
-  </div>
-  <!-- Game Select Category modal on game view -->
-  <div class="modal" id="category-modal">
-    <p class="close-modal" data-type="category-modal" tabindex="0">X</p>
-    <!-- Select Category -->
-    <div class="game-options-category">
-      <p>Select Category:</p>
-      <select id="game-view-category-selector">
-        <option value="countries">Countries</option>
-        <option value="animals">Animals</option>
-        <option value="movies">Movies</option>
-      </select>
+    <!-- Game Select Category modal on game view -->
+    <div class="modal" id="category-modal">
+      <p class="close-modal" data-type="category-modal" tabindex="0">X</p>
+      <!-- Select Category -->
+      <div class="game-options-category">
+        <p>Select Category:</p>
+        <select id="game-view-category-selector">
+          <option value="countries">Countries</option>
+          <option value="animals">Animals</option>
+          <option value="movies">Movies</option>
+        </select>
+      </div>
+      <button class="close-modal close-modal-button" data-type="category-modal" id="restart-category-button"
+        tabindex="0">Play again</button>
     </div>
-    <button class="close-modal close-modal-button" data-type="category-modal" id="restart-category-button"
-      tabindex="0">Play again</button>
+      <!-- Game instructions button -->
+      <button id="instructions-button" tabindex="0"> Game Instructions </button>
   </div>
+
   <script src="assets/js/script.js"> </script>
 </body>
 
