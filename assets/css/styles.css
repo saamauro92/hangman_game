@@ -407,3 +407,13 @@ button:focus {
 }
 
 }
+/* for medium screen sizes from 768px px wide and down */
+@media screen and (max-width: 768px) {
+/* Modals */
+.modal {
+  width: 90%;
+  height:90%;
+  padding:5px;
+}
+
+}
