@@ -229,6 +229,7 @@ button:focus {
   cursor: pointer;
   border: none;
   font-size: 18px;
+
 }
 
 #instructions-button:hover {
