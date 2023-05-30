@@ -11,7 +11,7 @@ var player;
 
 document.addEventListener("DOMContentLoaded", function () {
   //fetch countries, animales and movies data from assets/data/data.json
-  fetchGameData()
+  fetchGameData();
   //gets player name from localStorage
   if (localStorage.getItem("player")) {
     document.getElementById("player-name").value =
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return (document.getElementById("display-name-error").innerHTML =
         "**Please complete your name");
     }else {
-      document.getElementById("display-name-error").innerHTML = ""
+      document.getElementById("display-name-error").innerHTML = "";
     }
     //restarts all the counters, words and hangman displayed
     restartCounters();
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const gameInstructionsButton = document.getElementById("instructions-button");
   gameInstructionsButton.addEventListener("click", function () {
     toggleModal('instructions-modal');
-  })
+  });
 
   //get modals closing button and event 
   const closeModals = document.getElementsByClassName("close-modal");
@@ -72,20 +72,20 @@ document.addEventListener("DOMContentLoaded", function () {
       if (this.getAttribute("data-type") === "instructions-modal") {
         toggleModal('instructions-modal');
       } else if (this.getAttribute("data-type") === "error-modal") {
-        toggleModal('error-modal')
+        toggleModal('error-modal');
       } else if (this.getAttribute("data-type") === "success-modal") {
-        toggleModal('success-modal')
+        toggleModal('success-modal');
       } else if (this.getAttribute("data-type") === "category-modal") {
-        toggleModal('category-modal')
+        toggleModal('category-modal');
       }
-    })
+    });
   }
 
   //get game change category button and event
   const changeCategoryButton = document.getElementById("change-category-button");
   changeCategoryButton.addEventListener("click", function () {
     toggleModal('category-modal');
-  })
+  });
 
   //get play again button from category change modal and restart the game
   const playAgainByCategoryChanged = document.getElementById("restart-category-button");
@@ -95,10 +95,10 @@ document.addEventListener("DOMContentLoaded", function () {
     category = selectCategory.options[selectCategory.selectedIndex].value;
     //save new category in localstorage
     localStorage.setItem("category", category);
-    restartCounters()
+    restartCounters();
     //get random new word by new category
     choosenWord = getRandomWordBycategory(category);
-  })
+  });
 
 
 });
@@ -301,8 +301,8 @@ function incrementScoreCounter() {
   scoreCounter += 1;
   document.getElementById("score-counter").innerText = scoreCounter;
   nextWord();
-  toggleModal('success-modal')
-  document.getElementById("success-message").textContent = `Well done ${player}!`
+  toggleModal('success-modal');
+  document.getElementById("success-message").textContent = `Well done ${player}!`;
 }
 
 /**This function gets the hangman svg and return it on parts according to the errorCounters */
@@ -337,8 +337,8 @@ function hangmanDisplay() {
       choosenWord = getRandomWordBycategory(category);
       restartCounters();
     }, 1000);
-    toggleModal('error-modal')
-    document.getElementById("hanged-man").textContent = `Sorry ${player}! the correct anser was ${choosenWord.toUpperCase()}`
+    toggleModal('error-modal');
+    document.getElementById("hanged-man").textContent = `Sorry ${player}! the correct anser was ${choosenWord.toUpperCase()}`;
   }
 }
 
@@ -348,7 +348,7 @@ function drawAnimation(getBy, name) {
   if (getBy === 'id') {
     let path = document.getElementById(name);
     //override paths as an array of the element by id in order to loop it after
-    paths = [path]
+    paths = [path];
   } else if (getBy === "class") {
     //get all the elements with that class in order to loop it after
     paths = document.getElementsByClassName(name);
