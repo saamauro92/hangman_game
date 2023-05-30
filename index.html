@@ -17,7 +17,7 @@
     <!-- Player name -->
     <p id="display-player"> </p>
     <!-- Title -->
-    <h1 id="title" aria-label="go to main view">Hangman</h1>
+    <h1 id="title" aria-label="go to main view" tabindex="0">Hangman</h1>
     <!-- First Section View -->
     <div id="game-options">
       <div class="game-options-name">
@@ -121,14 +121,14 @@
     <!-- Game error modal -->
     <div class="modal" id="error-modal">
       <button class="close-modal" data-type="error-modal" tabindex="0">X</button>
-      <h2 id="hanged-man">Sorry </h2>
+      <p id="hanged-man"></p>
       <p>You got Hanged!</p>
       <button class="close-modal close-modal-button" data-type="error-modal" tabindex="0">Play again</button>
     </div>
     <!-- Game success modal -->
     <div class="modal" id="success-modal">
       <button class="close-modal" data-type="success-modal" tabindex="0">X</button>
-      <h2 id="success-message">Well done</h2>
+      <p id="success-message"></p>
       <p>You got 1+ point!</p>
       <button class="close-modal close-modal-button" data-type="success-modal" tabindex="0">Play again</button>
     </div>
