@@ -302,7 +302,7 @@ function incrementScoreCounter() {
   document.getElementById("score-counter").innerText = scoreCounter;
   nextWord();
   toggleModal('success-modal')
-  document.getElementById("success-message").textContent += `${player}!`
+  document.getElementById("success-message").textContent = `Well done ${player}!`
 }
 
 /**This function gets the hangman svg and return it on parts according to the errorCounters */
@@ -338,7 +338,7 @@ function hangmanDisplay() {
       restartCounters();
     }, 1000);
     toggleModal('error-modal')
-    document.getElementById("hanged-man").textContent += `${player}! the correct anser was ${choosenWord.toUpperCase()}`
+    document.getElementById("hanged-man").textContent = `Sorry ${player}! the correct anser was ${choosenWord.toUpperCase()}`
   }
 }
 
