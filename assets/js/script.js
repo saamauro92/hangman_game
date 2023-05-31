@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("display-player").style.display = "block"; //set players display block
     document.getElementById("game").style.display = "flex"; // set game visible 
     document.getElementById("display-player").textContent = player; // set players name 
-    document.getElementsByTagName("input")[0].focus();
 
     //save player and category in localStorage
     localStorage.setItem("player", player);
@@ -198,8 +197,8 @@ function runGame(choosenWord) {
   let lettersContainer = document.getElementById("word-container");
   lettersContainer.innerHTML = "";
 
-  let html = `<input class="game-letter" type="text" readonly>`;
-  let htmlEmpty = `<input class="game-letter-space" type="text" readonly>`;
+  let html = `<div class="game-letter"></div>`;
+  let htmlEmpty = `<div class="game-letter-space"></div>`;
 
   for (let i = 0; i < choosenWord.length; i++) {
     if (choosenWord[i] === " ") {
@@ -275,7 +274,7 @@ function compareArrays(arr1, arr2) {
 function printLetter(indexes, word) {
   let letters = document.getElementsByClassName("game-letter");
   for (let index of indexes) {
-    letters[index].value = word[index];
+    letters[index].textContent = word[index];
   }
 }
 
