@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("display-player").style.display = "block"; //set players display block
     document.getElementById("game").style.display = "flex"; // set game visible 
     document.getElementById("display-player").textContent = player; // set players name 
+    //get the focus in the hiddenInput in order to open keyboard in mobile
+    document.getElementById("hiddenInput").focus();
 
     //save player and category in localStorage
     localStorage.setItem("player", player);
