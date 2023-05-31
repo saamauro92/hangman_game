@@ -311,7 +311,7 @@ button:focus {
 /* Hidden input*/
 
 #hiddenInput {
-opacity: 10;
+opacity: 0;
 width: 100%;
 z-index: 1;
 position: absolute;
