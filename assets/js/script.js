@@ -202,7 +202,7 @@ function runGame(choosenWord) {
   let lettersContainer = document.getElementById("word-container");
   lettersContainer.innerHTML = "";
 
-  let html = `<div class="game-letter"></div>      <input type="text" id="hiddenInput">`;
+  let html = `<div class="game-letter"></div> `;
   let htmlEmpty = `<div class="game-letter-space"></div>`;
 
   for (let i = 0; i < choosenWord.length; i++) {
