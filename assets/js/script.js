@@ -197,8 +197,8 @@ function runGame(choosenWord) {
   let lettersContainer = document.getElementById("word-container");
   lettersContainer.innerHTML = "";
 
-  let html = `<div class="game-letter"></div>`;
-  let htmlEmpty = `<div class="game-letter-space"></div>`;
+  let html = `<input class="game-letter">`;
+  let htmlEmpty = `<input class="game-letter-space">`;
 
   for (let i = 0; i < choosenWord.length; i++) {
     if (choosenWord[i] === " ") {
@@ -274,7 +274,7 @@ function compareArrays(arr1, arr2) {
 function printLetter(indexes, word) {
   let letters = document.getElementsByClassName("game-letter");
   for (let index of indexes) {
-    letters[index].textContent = word[index];
+    letters[index].value = word[index];
   }
 }
 
