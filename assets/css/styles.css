@@ -72,6 +72,7 @@ body {
   display: flex;
   max-width: 500px;
   flex-shrink: 1;
+  position:relative;
 }
 
 .wrong-letters {
@@ -176,6 +177,7 @@ h1 {
   font-size: 20px;
   text-align: center;
   text-transform: uppercase;
+  z-index: 10;
 }
 
 .game-letter {
@@ -187,6 +189,7 @@ h1 {
   font-size: 20px;
   text-align: center;
   text-transform: uppercase;
+  z-index: 10;
 }
 
 /* input type text and select */
@@ -308,9 +311,10 @@ button:focus {
 /* Hidden input*/
 
 #hiddenInput {
-opacity: 0;
-outline:none;
-border:none;
+opacity: 10;
+width: 100%;
+z-index: 1;
+position: absolute;
 }
 
 
