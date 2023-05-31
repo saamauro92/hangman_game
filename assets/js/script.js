@@ -46,10 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("game").style.display = "flex"; // set game visible 
     document.getElementById("display-player").textContent = player; // set players name 
 
-    //keep focusing on the hiddenInput in order to open keyboard in mobile
-      setInterval(function(){
+    //Focus on the hiddenInput in order to open keyboard in mobile
         document.getElementById("hiddenInput").focus();
-      }, 300)
+
 
 
     //save player and category in localStorage
@@ -203,7 +202,7 @@ function runGame(choosenWord) {
   let lettersContainer = document.getElementById("word-container");
   lettersContainer.innerHTML = "";
 
-  let html = `<div class="game-letter"></div>`;
+  let html = `<div class="game-letter"></div>      <input type="text" id="hiddenInput">`;
   let htmlEmpty = `<div class="game-letter-space"></div>`;
 
   for (let i = 0; i < choosenWord.length; i++) {
