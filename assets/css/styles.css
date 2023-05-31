@@ -305,6 +305,14 @@ button:focus {
     opacity: 1;
   }
 }
+/* Hidden input*/
+
+#hiddenInput {
+opacity: 0;
+outline:none;
+border:none;
+}
+
 
 /* for medium screen sizes from 1208px px wide and down */
 @media screen and (max-width: 1208px) {
