@@ -45,7 +45,8 @@ The live version can be found  [Here](https://saamauro92.github.io/hangman_game/
       - [Wave Tool](#wave-tool)
 
    - [Manual testing](#manual-testing)
-   - [Known Bugs](#known-bugs)
+   - [Known Bugs](#known-bugs) 
+     - [Fixed bugs](#fixed-bugs)
 
 - [Deployment ](#deployment)
 
@@ -221,9 +222,12 @@ I based the design of this website/game on a school note book that incorporates 
 ### Known Bugs
 
    
-
- - On mobile version keyboard will not show up making it difficult to play the game.
  -  Generating random words to guess sometimes could repeat the words.
+
+ #### Fixed Bugs
+
+ -  On mobile version keyboard will not show up, I tried several approaches and the only one that seemed to work fine was by adding a hidden input above the letters in html to guess and set opacity 0 and Z index 20 on the letters.
+ 
 
 ## Deployment
 
