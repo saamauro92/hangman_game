@@ -26,6 +26,7 @@ The live version can be found  [Here](https://saamauro92.github.io/hangman_game/
       - [Game](#game)
       - [Game scores](#game-score)
       - [Game actions](#game-actions)
+      - [Game instructions modal](#game-instructions-modal)
       - [Error page](#error-page)
 
    - [Features Left to Implement ](#features-left-to-implement)
@@ -114,6 +115,12 @@ The live version can be found  [Here](https://saamauro92.github.io/hangman_game/
   
 
 ![game_actions](https://github.com/saamauro92/hangman_game/raw/main/media/game_actions.png)
+
+##### Game instructions modal
+- This modal displays the game instructions for the user.
+
+
+![game-instructions](https://github.com/saamauro92/hangman_game/raw/main/media/game-instructions.png)
 
 ##### Error page
 
