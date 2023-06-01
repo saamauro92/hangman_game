@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!player) {
       return (document.getElementById("display-name-error").innerHTML =
         "**Please complete your name");
-    }else {
+    } else {
       document.getElementById("display-name-error").innerHTML = "";
     }
     //restarts all the counters, words and hangman displayed
@@ -47,9 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("display-player").textContent = player; // set players name 
 
     //Focus on the hiddenInput in order to open keyboard in mobile
-        document.getElementById("hiddenInput").focus();
-
-
+    document.getElementById("hiddenInput").focus();
 
     //save player and category in localStorage
     localStorage.setItem("player", player);
