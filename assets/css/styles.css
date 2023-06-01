@@ -418,9 +418,9 @@ position: absolute;
   /* Modals */
   .modal {
     width: 95%;
-    height: auto;
+    height: 100%;
     padding:10%;
     top:20px;
-   
+    bottom:20px;
   }
 }
